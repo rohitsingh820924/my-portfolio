@@ -5,9 +5,9 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 export function SkillsSection() {
   return (
-    <div className="h-[30rem] flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="h-[30rem] flex flex-col antialiased dark:bg-black bg-white dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       
-      <h2 className="text-4xl md:text-5xl font-bold text-center text-neutral-50 mb-5">Title</h2>
+      <h2 className="text-4xl md:text-5xl font-bold text-center dark:text-neutral-300 text-neutral-950 mb-5">My Skills</h2>
 
       <InfiniteMovingCards
         items={testimonials}
@@ -21,31 +21,40 @@ export function SkillsSection() {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "With Adobe Photoshop expertise, I excel in creating and enhancing images, designing graphics, and editing photos to achieve professional-quality results.",
+    image: "/images/skills/photoshop.png",
+    title: "Adobe Photoshop",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+      "Proficient in Adobe Illustrator, I specialize in vector graphic design, creating logos, illustrations, and intricate designs with precision and creativity.",
+    image: "/images/skills/illustrator.png",
+    title: "Adobe Illustrator",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+      "Skilled in Adobe Premiere Pro, I bring video projects to life through professional editing, color correction, and seamless transitions for compelling narratives.",
+    image: "/images/skills/premiere-pro.png",
+    title: "Adobe Premiere Pro",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+      "Expert in Adobe XD, I design intuitive and visually appealing user interfaces, focusing on user experience and interactive prototypes for digital products.",
+    image: "/images/skills/xd.png",
+    title: "Adobe XD",
   },
+  {
+    quote:
+      "With Adobe Media Encoder, I efficiently manage video rendering and compression tasks, ensuring optimized output for multiple platforms with excellent quality.",
+    image: "/images/skills/media-encoder.png",
+    title: "Adobe Media Encoder",
+  },
+  {
+    quote:
+      "Proficient in Adobe After Effects, I create stunning motion graphics, visual effects, and animations, adding dynamic elements to videos and multimedia projects.",
+    image: "/images/skills/after-effects.png",
+    title: "Adobe After Effects",
+  }
 ];
+
+

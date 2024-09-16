@@ -27,10 +27,13 @@ export default function InputBox() {
     countryCode: ""
   }); 
 
+  const [error, setError] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.warn(formData);
     
+   if(formData.email) {
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
@@ -50,6 +53,9 @@ export default function InputBox() {
     } catch (error) {
       console.log('An error occurred while sending the email.');
     }
+   } else {
+    setError(true);
+   }
   };
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
@@ -58,11 +64,11 @@ export default function InputBox() {
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" value={formData.firstName} onChange={(e:any)=>setFormData((formData)=>({...formData, firstName:e.target.value }))} />
+            <Input id="firstname" placeholder="Rohit" type="text" value={formData.firstName} onChange={(e:any)=>setFormData((formData)=>({...formData, firstName:e.target.value }))} />
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Durden" type="text" value={formData.lastName} onChange={(e:any)=>setFormData((formData)=>({...formData, lastName:e.target.value }))} />
+            <Input id="lastname" placeholder="Singh" type="text" value={formData.lastName} onChange={(e:any)=>setFormData((formData)=>({...formData, lastName:e.target.value }))} />
           </LabelInputContainer>
         </div>
             <LabelInputContainer className="mb-4">
@@ -76,13 +82,13 @@ export default function InputBox() {
           </select>
         </div>
         <div className="col-span-2">
-          <Input id="email" placeholder="projectmayhem@fc.com" type="number"  value={formData.phone} onChange={(e:any)=>setFormData((formData)=>({...formData, phone:e.target.value }))} />
+          <Input id="phone" className="remove-arrow" placeholder="8209243183" type="number"  value={formData.phone} onChange={(e:any)=>setFormData((formData)=>({...formData, phone:e.target.value }))} />
         </div>
         </div>
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email"  value={formData.email} onChange={(e:any)=>setFormData((formData)=>({...formData, email:e.target.value }))} />
+          <Input id="email" className="transition" style={error ? { boxShadow: '0px 0px 10px 2px #ff000096', border: '1px solid #ff000096' } : {}} placeholder="rohitsingh820924@gmail.com" type="email"  value={formData.email} onChange={(e:any)=>{setFormData((formData)=>({...formData, email:e.target.value })), setError(false)}} />
         </LabelInputContainer>
 
         <button

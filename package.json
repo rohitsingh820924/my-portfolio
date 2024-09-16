@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-label": "^2.1.0",
     "@tabler/icons-react": "^3.14.0",
     "clsx": "^2.1.1",
@@ -18,7 +19,9 @@
     "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.5.2"
+    "react-hook-form": "^7.53.0",
+    "tailwind-merge": "^2.5.2",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",
