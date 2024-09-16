@@ -15,7 +15,7 @@ export default function FloatingIcons() {
       icon: (
         <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.linkedin.com/in/rohit-singh-0a9b36207/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
 
     {
@@ -23,28 +23,28 @@ export default function FloatingIcons() {
       icon: (
         <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.instagram.com/rohit_singh_shekhawat01?igsh=bzExem05aXRtajJ1",
     },
     {
       title: "Whatsapp",
       icon: (
         <IconBrandWhatsapp className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://wa.me/8209243183",
     },
     {
       title: "Twitter",
       icon: (
         <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://x.com/WWERS_Edits?t=HzWqGMtoSpaThLSSasvFKQ&s=09",
     },
     {
       title: "GitHub",
       icon: (
         <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://github.com/rohitsingh820924",
     },
   ];
   return (

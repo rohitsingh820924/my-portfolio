@@ -59,7 +59,7 @@ const content = [
         Running out of content
       </div>
     ),
-    url: "https://sportswiz.live",
+    url: "https://www.quadrafreelancers.com/",
   },
   {
     title: "Pulse - Social Media Website",
@@ -77,8 +77,16 @@ const content = [
     description:
       "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+            src={"https://api.microlink.io/?https://www.quadrafreelancers.com"}
+            width={300}
+            height={200}
+            quality={50}
+            layout={"fixed"}
+            priority={true}
+            alt="hidden image"
+          />
       </div>
     ),
     url: "https://sportswiz.live",
