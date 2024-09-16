@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
+import { link } from "fs";
 
 const content = [
   {
@@ -19,6 +20,7 @@ const content = [
         />
       </div>
     ),
+    url: "https://sportswiz.live",
   },
   {
     title: "AffordableDreams",
@@ -35,6 +37,7 @@ const content = [
         />
       </div>
     ),
+    url: "https://sportswiz.live",
   },
   {
     title: "Socket",
@@ -45,6 +48,7 @@ const content = [
         Version control
       </div>
     ),
+    url: "https://sportswiz.live",
   },
   {
     title: "Quadra",
@@ -55,6 +59,7 @@ const content = [
         Running out of content
       </div>
     ),
+    url: "https://sportswiz.live",
   },
   {
     title: "Pulse - Social Media Website",
@@ -65,6 +70,7 @@ const content = [
         Running out of content
       </div>
     ),
+    url: "https://sportswiz.live",
   },
   {
     title: "Digi Homes - Real Estate",
@@ -75,6 +81,7 @@ const content = [
         Running out of content
       </div>
     ),
+    url: "https://sportswiz.live",
   },
   {
     title: "Flikka - Job Search",
@@ -85,6 +92,7 @@ const content = [
         Running out of content
       </div>
     ),
+    url: "https://sportswiz.live",
   },
   {
     title: "Flikka - Job Search",
@@ -95,6 +103,7 @@ const content = [
         Running out of content
       </div>
     ),
+    url: "https://sportswiz.live",
   },
 ];
 export function ProjectSection() {

@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 export const StickyScroll = ({
   content,
@@ -11,6 +12,7 @@ export const StickyScroll = ({
   content: {
     title: string;
     description: string;
+    url: string;
     content?: React.ReactNode | any;
   }[];
   contentClassName?: string;
@@ -92,6 +94,11 @@ export const StickyScroll = ({
                 className="text-kg text-slate-300 max-w-sm mt-10"
               >
                 {item.description}
+                <div className="text-xs mt-8">
+                <LinkPreview url={item.url}>
+                    Visit Website
+                </LinkPreview>
+                </div>
               </motion.p>
             </div>
           ))}

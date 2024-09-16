@@ -41,8 +41,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
           My journey as Frontend Developer
         </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working as Frontend Developer for the past 2 years. Here&apos;s
+        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base">
+          I&apos;ve been working as Frontend Developer for the past 2 years. <br /> Here&apos;s
           a timeline of my journey.
         </p>
       </div>

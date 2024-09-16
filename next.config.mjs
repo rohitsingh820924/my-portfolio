@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['assets.aceternity.com', 'images.unsplash.com'],
+        domains: ['assets.aceternity.com', 'images.unsplash.com', 'api.microlink.io'],
       },
       env: {
         NEXT_URL_SMTP_HOST: process.env.NEXT_URL_SMTP_HOST,
