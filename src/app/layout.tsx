@@ -7,9 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Rohit Singh - Portfolio",
   description: "Welcome to the portfolio of Rohit Singh. Explore my work in web design, frontend development, ReactJS, NextJS, and Figma.",
-  author: "Rohit Singh",
+  publisher: "Rohit Singh",
   keywords: "Rohit Singh, portfolio, web design, frontend development, ReactJS, NextJS, Figma",
-  url: "https://rohitsingh.cloud"
 };
 
 
