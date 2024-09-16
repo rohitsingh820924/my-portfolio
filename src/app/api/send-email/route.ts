@@ -8,14 +8,17 @@ export async function POST(req: NextRequest, res: NextResponse) {
   // Create a transporter with your SMTP credentials
   let transporter = nodemailer.createTransport({
     service: 'Gmail',
-    host: process.env.NEXT_URL_SMTP_HOST, // e.g., 'smtp.example.com'
-    port: process.env.NEXT_URL_SMTP_PORT, // e.g., 587 or 465
-    secure: process.env.NEXT_URL_SMTP_SECURE, // true for 465, false for other ports
+    host: process.env.NEXT_URL_SMTP_HOST || 'smtp.gmail.com', // Default to Gmail's SMTP server if not specified
+    port: Number(process.env.NEXT_URL_SMTP_PORT) || 587, // Default to port 587 if not specified
+    secure: process.env.NEXT_URL_SMTP_SECURE === 'true', // Convert string to boolean
     auth: {
       user: process.env.NEXT_URL_SMTP_USER, // your SMTP username
       pass: process.env.NEXT_URL_SMTP_PASS, // your SMTP password
     },
-    connectionTimeout: 5 * 60 * 1000, // 5 min
+    // Note: You may need to include additional settings for Gmail, such as `tls` options:
+    tls: {
+      rejectUnauthorized: false // You may need to disable this for self-signed certs or similar issues
+    }
   });
   
   // Set up email data
