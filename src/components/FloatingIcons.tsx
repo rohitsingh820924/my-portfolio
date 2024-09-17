@@ -30,7 +30,7 @@ export default function FloatingIcons() {
       icon: (
         <IconBrandWhatsapp className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://wa.me/8209243183",
+      href: "https://wa.me/918209243183",
     },
     {
       title: "Twitter",
