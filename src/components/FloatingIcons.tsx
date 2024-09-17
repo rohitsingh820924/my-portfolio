@@ -50,7 +50,7 @@ export default function FloatingIcons() {
   return (
     <div className="flex items-center justify-center w-full">
       <FloatingDock
-        mobileClassName="translate-y-20" // only for demo, remove for production
+        mobileClassName="" // only for demo, remove for production
         items={links}
       />
     </div>

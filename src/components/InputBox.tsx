@@ -81,7 +81,6 @@ export default function InputBox() {
   };
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border dark:border-white/[0.2] border-black/[0.1]">
-
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
@@ -132,7 +131,7 @@ export default function InputBox() {
   );
 }
 
-const BottomGradient = () => {
+export const BottomGradient = () => {
   return (
     <>
       <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
@@ -141,7 +140,7 @@ const BottomGradient = () => {
   );
 };
 
-const LabelInputContainer = ({
+export const LabelInputContainer = ({
   children,
   className,
 }: {

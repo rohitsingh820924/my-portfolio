@@ -88,19 +88,19 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item) => (
           <li
-            className="w-[350px] max-w-full relative rounded-lg border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex-shrink-0 px-8 py-6 md:w-[450px]"
+            className="w-[75px] max-w-full relative rounded-lg border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex-shrink-0 p-3 md:px-8 md:py-6 md:w-[450px]"
             key={item.title}
           >
             <blockquote>
-              <div className="flex gap-5 items-center text-2xl font-bold mb-5">
+              <div className="flex md:gap-5 items-center text-2xl font-bold md:mb-5">
                 <div className="drop-shadow-2xl shadow-white ">
                   <Image src={item.image} alt="" width={50} height={50} />
                 </div>
-                <div>
+                <div className="md:block hidden">
                   <span className="dark:text-neutral-300 text-neutral-950">{item.title}</span>
                 </div>
               </div>
-              <div className="border-t dark:border-white/[0.2] border-black/[0.1] pt-5">
+              <div className="border-t dark:border-white/[0.2] border-black/[0.1] pt-5 md:block hidden">
                 <p className="dark:text-neutral-300 text-neutral-950 text-sm">{item.quote}</p>
               </div>
             </blockquote>
