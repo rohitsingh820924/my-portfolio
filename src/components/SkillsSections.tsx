@@ -5,15 +5,25 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 export function SkillsSection() {
   return (
-    <div className="h-[30rem] flex flex-col antialiased dark:bg-black bg-white dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="h-svh flex flex-col antialiased dark:bg-black bg-white dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       
       <h2 className="text-4xl md:text-5xl font-bold text-center dark:text-neutral-300 text-neutral-950 mb-5">My Skills</h2>
 
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="right"
-        speed="slow"
-      />
+      <div className="py-3">
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
+        />
+      </div>
+
+      <div className="py-3">
+        <InfiniteMovingCards
+          items={testimonialsCode}
+          direction="left"
+          speed="slow"
+        />
+      </div>
     </div>
   );
 }
@@ -56,5 +66,63 @@ const testimonials = [
     title: "Adobe After Effects",
   }
 ];
+
+const testimonialsCode = [
+  {
+    quote:
+      "Skilled in Figma, I design modern and user-friendly interfaces, collaborate with teams effectively, and create interactive prototypes to visualize design concepts.",
+    image: "/images/skills/figma.png",
+    title: "Figma",
+  },
+  {
+    quote:
+      "Experienced with SCSS, I streamline and enhance CSS with variables, nested rules, and modular styles, improving maintainability and scalability in web design.",
+    image: "/images/skills/scss.png",
+    title: "SCSS",
+  },
+  {
+    quote:
+      "Proficient in JavaScript, I develop dynamic and interactive web applications, implement complex features, and solve problems with versatile scripting capabilities.",
+    image: "/images/skills/javascript.png",
+    title: "JavaScript",
+  },
+  {
+    quote:
+      "Skilled in TypeScript, I enhance JavaScript development with static typing, leading to more reliable and maintainable code in complex applications.",
+    image: "/images/skills/typescript.png",
+    title: "TypeScript",
+  },
+  {
+    quote:
+      "Experienced with ReactJS, I build efficient and scalable user interfaces, leverage component-based architecture, and create responsive web applications.",
+    image: "/images/skills/reactjs.png",
+    title: "ReactJS",
+  },
+  {
+    quote:
+      "Proficient in NextJS, I develop server-side rendered React applications, optimize performance, and implement static site generation for faster and more reliable web experiences.",
+    image: "/images/skills/nextjs.png",
+    title: "NextJS",
+  },
+  {
+    quote:
+      "Skilled in Material UI, I create modern and consistent user interfaces with pre-designed components and a responsive grid system, enhancing user experience.",
+    image: "/images/skills/material-ui.png",
+    title: "Material UI",
+  },
+  {
+    quote:
+      "Experienced with jQuery, I simplify DOM manipulation, event handling, and AJAX requests, streamlining development for dynamic and interactive web pages.",
+    image: "/images/skills/jquery.png",
+    title: "jQuery",
+  },
+  {
+    quote:
+      "Proficient in Bootstrap, I utilize its responsive grid system and pre-built components to quickly design and develop mobile-first, visually appealing websites.",
+    image: "/images/skills/bootstrap.png",
+    title: "Bootstrap",
+  }
+];
+
 
 

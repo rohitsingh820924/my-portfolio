@@ -6,7 +6,7 @@ import ThreeDCard from "./ThreeDCard";
 export default function FormSection() {
   return (
     <BackgroundBeamsWithCollision>
-      <div className="grid grid-cols-2 gap-20">
+      <div className="grid grid-cols-2 gap-20 py-10">
         <div className="col-span-2">
         <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
         What&apos;s cooler than Beams?{" "}

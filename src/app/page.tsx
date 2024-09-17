@@ -18,7 +18,7 @@ export default function Home() {
       <ProjectSection />
       <TimelineSection />
       <FlipTitle />
-      <InputSection />
+      {/* <InputSection /> */}
       <FormSection />
     </div>
   );

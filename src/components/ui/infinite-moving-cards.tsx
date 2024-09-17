@@ -100,7 +100,7 @@ export const InfiniteMovingCards = ({
                   <span className="dark:text-neutral-300 text-neutral-950">{item.title}</span>
                 </div>
               </div>
-              <div className="border-t border-t-white pt-5">
+              <div className="border-t dark:border-white/[0.2] border-black/[0.1] pt-5">
                 <p className="dark:text-neutral-300 text-neutral-950 text-sm">{item.quote}</p>
               </div>
             </blockquote>

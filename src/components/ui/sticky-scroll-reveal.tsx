@@ -94,11 +94,11 @@ export const StickyScroll = ({
                 className="text-kg text-slate-300 max-w-sm mt-10"
               >
                 {item.description}
-                <div className="text-xs mt-8">
+                <span className="text-xs mt-8 block">
                 <LinkPreview url={item.url}>
                     Visit Website
                 </LinkPreview>
-                </div>
+                </span>
               </motion.p>
             </div>
           ))}

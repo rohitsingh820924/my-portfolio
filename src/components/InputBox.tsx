@@ -4,6 +4,9 @@ import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import FloatingIcons from "./FloatingIcons";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function InputBox() {
 
@@ -27,6 +30,8 @@ export default function InputBox() {
     countryCode: ""
   }); 
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [error, setError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -35,6 +40,7 @@ export default function InputBox() {
     
    if(formData.email) {
     try {
+      setIsSubmitting(true);
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -47,18 +53,34 @@ export default function InputBox() {
 
       if (response.ok) {
         console.log('Email sent successfully!');
+        toast.success("Thanks For Connecting", {
+          theme: "dark"
+        });
+        setFormData({
+          email: "",
+          firstName: "",
+          lastName: "",
+          phone: "",
+          countryCode: ""
+        })
+
+        setIsSubmitting(false);
       } else {
         console.log(`Error: ${data.message}`);
+        setIsSubmitting(false);
       }
     } catch (error) {
       console.log('An error occurred while sending the email.');
     }
    } else {
     setError(true);
+    toast.error("Please Enter Email", {
+      theme: "dark"
+    });
    }
   };
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border dark:border-white/[0.2] border-black/[0.1]">
 
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
@@ -93,9 +115,9 @@ export default function InputBox() {
 
         <button
           className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-          type="submit"
+          type="submit" disabled={isSubmitting}
         >
-          Send &rarr;
+          {isSubmitting ? 'Sending...' : 'Send'}
           <BottomGradient />
         </button>
 
@@ -105,6 +127,7 @@ export default function InputBox() {
         <FloatingIcons />
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 }
