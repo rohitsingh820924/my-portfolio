@@ -12,7 +12,7 @@ export default function Home() {
   console.log(process.env.NEXT_URL_SMTP_HOST)
   return (
     <div className="relative">
-      <Navbar className="top-5" />
+      <Navbar className="top-5 left-3 right-3" />
       <HeroSection />
       <SkillsSection />
       <ProjectSection />

@@ -5,7 +5,7 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 export function SkillsSection() {
   return (
-    <div className="h-svh flex flex-col antialiased dark:bg-black bg-white dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="h-auto flex flex-col antialiased dark:bg-black bg-white dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       
       <h2 className="text-4xl md:text-5xl font-bold text-center dark:text-neutral-300 text-neutral-950 mb-5">My Skills</h2>
 

@@ -6,8 +6,8 @@ import ThreeDCard from "./ThreeDCard";
 export default function FormSection() {
   return (
     <BackgroundBeamsWithCollision>
-      <div className="grid md:grid-cols-2 grid-cols-1 gap-20 py-10">
-        <div className="md:col-span-2 col-span-1">
+      <div className="gap-10 pb-10 flex md:flex-row flex-col-reverse justify-between">
+        {/* <div className="md:col-span-2 col-span-1">
         <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
         What&apos;s cooler than Beams?{" "}
         <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
@@ -19,7 +19,7 @@ export default function FormSection() {
           </div>
         </div>
       </h2>
-        </div>
+        </div> */}
       <InputBox />
       <ThreeDCard />
       </div>

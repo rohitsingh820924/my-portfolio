@@ -5,7 +5,7 @@ import { Spotlight } from "./ui/Spotlight";
 
 export const HeroSection = () => {
   return (
-    <div className="h-svh w-full flex md:items-center md:justify-center dark:bg-black bg-white antialiased bg-grid-white/[0.02] relative overflow-hidden">
+    <div className="h-svh w-full flex items-center justify-center dark:bg-black bg-white antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"

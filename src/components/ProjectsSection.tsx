@@ -8,7 +8,7 @@ const content = [
   {
     title: "SportsWiz",
     description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+      "Your go-to for live scores, stats, and sports news. Stay updated with real-time game updates and in-depth player info. Get the edge in every match with SportsWiz!",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         <Image
@@ -23,40 +23,35 @@ const content = [
     url: "https://sportswiz.live",
   },
   {
-    title: "AffordableDreams",
+    title: "Vantage Commercial Realty",
     description:
       "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
     content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
-          src="/linear.webp"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover"
-          alt="linear board demo"
-        />
-      </div>
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+      <Image
+        src="/images/projects/sportswiz.png"
+        width={300}
+        height={300}
+        className="h-full w-full object-cover"
+        alt="sportswiz"
+      />
+    </div>
     ),
-    url: "https://sportswiz.live",
-  },
-  {
-    title: "Socket",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
-      </div>
-    ),
-    url: "https://sportswiz.live",
+    url: "https://vantagecr.com/",
   },
   {
     title: "Quadra",
     description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      "Empowering your freelance journey. Connect with top talent, manage projects effortlessly, and elevate your business with ease. Discover the freedom of flexible work and exceptional results with Quadra Freelancers.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
+        <Image
+          src="/images/projects/quadra.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="sportswiz"
+        />
       </div>
     ),
     url: "https://www.quadrafreelancers.com/",
@@ -64,54 +59,53 @@ const content = [
   {
     title: "Pulse - Social Media Website",
     description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      "Your go-to for real connections and exciting encounters. Find your match or make a new connection with ease on Pulse.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
-      </div>
-    ),
-    url: "https://sportswiz.live",
-  },
-  {
-    title: "Digi Homes - Real Estate",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
-            src={"https://api.microlink.io/?https://www.quadrafreelancers.com"}
-            width={300}
-            height={200}
-            quality={50}
-            layout={"fixed"}
-            priority={true}
-            alt="hidden image"
-          />
+          src="/images/projects/pulse.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="sportswiz"
+        />
       </div>
     ),
-    url: "https://sportswiz.live",
+    url: "https://demourls.xyz/Pulse-development/home-story.html",
+  },
+  {
+    title: "DigiHomes - Real Estate",
+    description:
+      "Your digital gateway to real estate. Explore, buy, and sell homes effortlessly with DigiHomes.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        <Image
+          src="/images/projects/digi-homes.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="sportswiz"
+        />
+      </div>
+    ),
+    url: "https://digihomes.io/",
   },
   {
     title: "Flikka - Job Search",
     description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      "Find your next job with ease. Discover opportunities and connect with employers on Flikka.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
+        <Image
+          src="/images/projects/flikka.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="sportswiz"
+        />
       </div>
     ),
-    url: "https://sportswiz.live",
-  },
-  {
-    title: "Flikka - Job Search",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
-      </div>
-    ),
-    url: "https://sportswiz.live",
+    url: "https://urlsdemo.online/flikka/",
   },
 ];
 export function ProjectSection() {

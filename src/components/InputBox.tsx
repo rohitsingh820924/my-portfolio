@@ -80,7 +80,7 @@ export default function InputBox() {
    }
   };
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border dark:border-white/[0.2] border-black/[0.1]">
+    <div className="md:w-[20rem] lg:w-[30rem] w-auto mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border dark:border-white/[0.2] border-black/[0.1]">
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>

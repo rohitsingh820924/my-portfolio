@@ -69,7 +69,7 @@ export const StickyScroll = ({
       className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 p-10 no-scrollbar dark:bg-black bg-white"
       ref={ref}
     >
-      <div className="div relative flex items-start px-4">
+      <div className="div relative flex md:flex-row flex-col-reverse items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
@@ -108,7 +108,7 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-60 w-96 rounded-md bg-white sticky top-10 overflow-hidden",
+          "h-60 w-96 rounded-md bg-white sticky top-10 overflow-hidden",
           contentClassName
         )}
       >
