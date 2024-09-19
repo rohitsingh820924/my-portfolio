@@ -46,8 +46,8 @@ export const LinkPreview = ({
       colorScheme: "dark",
       "viewport.isMobile": true,
       "viewport.deviceScaleFactor": 1,
-      "viewport.width": width * 3,
-      "viewport.height": height * 3,
+      "viewport.width": width * 5,
+      "viewport.height": height * 5,
     });
     src = `https://api.microlink.io/?${params}`;
   } else {

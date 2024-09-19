@@ -15,7 +15,7 @@ const content = [
           src="/images/projects/sportswiz.png"
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top"
           alt="sportswiz"
         />
       </div>
@@ -29,10 +29,10 @@ const content = [
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
       <Image
-        src="/images/projects/sportswiz.png"
+        src="/images/projects/vantage.png"
         width={300}
         height={300}
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover object-top"
         alt="sportswiz"
       />
     </div>
@@ -49,12 +49,46 @@ const content = [
           src="/images/projects/quadra.png"
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top"
           alt="sportswiz"
         />
       </div>
     ),
     url: "https://www.quadrafreelancers.com/",
+  },
+  {
+    title: "AffordableDreamz",
+    description:
+      "Empowering your freelance journey. Connect with top talent, manage projects effortlessly, and elevate your business with ease. Discover the freedom of flexible work and exceptional results with Quadra Freelancers.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        <Image
+          src="/images/projects/affordabledreamz.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover object-top"
+          alt="sportswiz"
+        />
+      </div>
+    ),
+    url: "https://affordabledreamz.com/",
+  },
+  {
+    title: "Socket Prosthetics",
+    description:
+      "Empowering your freelance journey. Connect with top talent, manage projects effortlessly, and elevate your business with ease. Discover the freedom of flexible work and exceptional results with Quadra Freelancers.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        <Image
+          src="/images/projects/socketprosthetics.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover object-top"
+          alt="sportswiz"
+        />
+      </div>
+    ),
+    url: "https://socketprosthetics.com/",
   },
   {
     title: "Pulse - Social Media Website",
@@ -66,7 +100,7 @@ const content = [
           src="/images/projects/pulse.png"
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top"
           alt="sportswiz"
         />
       </div>
@@ -83,7 +117,7 @@ const content = [
           src="/images/projects/digi-homes.png"
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top"
           alt="sportswiz"
         />
       </div>
@@ -100,12 +134,29 @@ const content = [
           src="/images/projects/flikka.png"
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top"
           alt="sportswiz"
         />
       </div>
     ),
     url: "https://urlsdemo.online/flikka/",
+  },
+  {
+    title: "AR Academy",
+    description:
+      "Find your next job with ease. Discover opportunities and connect with employers on Flikka.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        <Image
+          src="/images/projects/aracademy.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover object-top"
+          alt="sportswiz"
+        />
+      </div>
+    ),
+    url: "https://www.aracademyras.com/",
   },
 ];
 export function ProjectSection() {
