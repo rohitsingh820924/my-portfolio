@@ -1,7 +1,10 @@
 import nodemailer from 'nodemailer';
 import { NextRequest, NextResponse } from 'next/server';
+import dbConnect from '@/lib/dnConnect';
+import InquiryModal from '@/modal/Inquiry';
 
 export async function POST(req: NextRequest, res: NextResponse) {
+  await dbConnect()
   const reqBody = await req.json()
   const { email, firstName, lastName, phone, countryCode } = reqBody.formData;
   
@@ -34,15 +37,25 @@ export async function POST(req: NextRequest, res: NextResponse) {
       <p>Phone No: <strong>${countryCode} ${phone}</strong></p>
     `, // HTML body
   };
+
+  const newInquiry = new InquiryModal({
+    firstName,
+    lastName,
+    email,
+    phone,
+    countryCode 
+  })
   
 
   console.log(mailOptions);
+  console.log(process.env.NEXT_MONGODB_URI);
   
   
   try {
     // Send mail
       await transporter.sendMail(mailOptions);
-      return NextResponse.json({ message: 'Email sent successfully!',mailOptions });
+      await newInquiry.save();
+      return NextResponse.json({ message: 'Email sent successfully!',mailOptions, newInquiry});
     } catch (error) {
       console.error(error);
       return NextResponse.json({ message: 'Error sending email' });

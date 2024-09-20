@@ -25,7 +25,7 @@ const content = [
   {
     title: "Vantage Commercial Realty",
     description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+      "Vantage Commercial Realty specializes in commercial real estate, offering services like property management and leasing to help clients manage and optimize their commercial properties.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
       <Image
@@ -59,7 +59,7 @@ const content = [
   {
     title: "AffordableDreamz",
     description:
-      "Empowering your freelance journey. Connect with top talent, manage projects effortlessly, and elevate your business with ease. Discover the freedom of flexible work and exceptional results with Quadra Freelancers.",
+      "AffordableDreamz specializes in affordable housing, helping clients find budget-friendly properties and assisting first-time homebuyers.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         <Image
@@ -76,7 +76,7 @@ const content = [
   {
     title: "Socket Prosthetics",
     description:
-      "Empowering your freelance journey. Connect with top talent, manage projects effortlessly, and elevate your business with ease. Discover the freedom of flexible work and exceptional results with Quadra Freelancers.",
+      "Socket Prosthetics designs and manufactures custom prosthetic sockets, focusing on comfort and functionality for amputees. They prioritize innovative solutions to improve mobility and enhance the quality of life for their users.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         <Image
@@ -144,7 +144,7 @@ const content = [
   {
     title: "AR Academy",
     description:
-      "Find your next job with ease. Discover opportunities and connect with employers on Flikka.",
+      "AR Academy offers coaching and resources for the RAS exam, providing study materials, mock tests, and expert guidance to help aspirants succeed.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         <Image

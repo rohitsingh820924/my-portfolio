@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+'use client';
+import React, { useEffect, useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../components/ui/navbar-menu";
 import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
   ModalTrigger,
 } from "@/components/ui/animated-modal";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { BottomGradient, LabelInputContainer } from "./InputBox";
-import ConnectModal from "./ConnectModal";
 import { toast, ToastContainer } from "react-toastify";
 import FloatingIcons from "./FloatingIcons";
-
 
 export default function Navbar({ className }: { className?: string }) {
     const [active, setActive] = useState<string | null>(null);
@@ -87,6 +85,11 @@ export default function Navbar({ className }: { className?: string }) {
       });
      }
     };
+
+    useEffect(() => {
+      console.warn(process.env.NEXT_MONGODB_URI);
+      
+    },[])
     return (
       <div
         className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}

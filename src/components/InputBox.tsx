@@ -27,7 +27,7 @@ export default function InputBox() {
     firstName: "",
     lastName: "",
     phone: "",
-    countryCode: ""
+    countryCode: "91"
   }); 
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,6 +71,7 @@ export default function InputBox() {
       }
     } catch (error) {
       console.log('An error occurred while sending the email.');
+      setIsSubmitting(false);
     }
    } else {
     setError(true);
