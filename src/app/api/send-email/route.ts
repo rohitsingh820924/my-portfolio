@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import { NextRequest, NextResponse } from 'next/server';
-import dbConnect from '@/lib/dnConnect';
+import dbConnect from '@/lib/dbConnect';
 import InquiryModal from '@/modal/Inquiry';
 
 export async function POST(req: NextRequest, res: NextResponse) {
@@ -34,7 +34,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       <h1>New Email Submission</h1>
       <p>Hi Rohit, ${firstName} ${lastName} has Submmited an Email.</p>
       <p>Email: <strong>${email}</strong></p>
-      <p>Phone No: <strong>${countryCode} ${phone}</strong></p>
+      <p>Phone No: <strong>+${countryCode} ${phone}</strong></p>
     `, // HTML body
   };
 
@@ -48,7 +48,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
   
 
   console.log(mailOptions);
-  console.log(process.env.NEXT_MONGODB_URI);
   
   
   try {

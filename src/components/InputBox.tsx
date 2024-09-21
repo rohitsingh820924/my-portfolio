@@ -4,9 +4,7 @@ import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import FloatingIcons from "./FloatingIcons";
-import { ToastContainer, toast } from 'react-toastify';
-
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 export default function InputBox() {
 
@@ -27,7 +25,7 @@ export default function InputBox() {
     firstName: "",
     lastName: "",
     phone: "",
-    countryCode: "91"
+    countryCode: "+91"
   }); 
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -61,7 +59,7 @@ export default function InputBox() {
           firstName: "",
           lastName: "",
           phone: "",
-          countryCode: ""
+          countryCode: "+91"
         })
 
         setIsSubmitting(false);
@@ -127,7 +125,6 @@ export default function InputBox() {
         <FloatingIcons />
         </div>
       </form>
-      <ToastContainer />
     </div>
   );
 }

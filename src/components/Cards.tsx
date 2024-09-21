@@ -1,10 +1,12 @@
 'use client'
 import { useEffect, useState } from "react";
 import { HoverEffect } from "./ui/card-hover-effect";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux'
 
 export default function Cards() {
 
+  const count = useSelector((state:any) => state.user.value)
     const [inquiries, setInquiries] = useState([])
     const getInquiry = async () => {
         try {
@@ -34,7 +36,7 @@ export default function Cards() {
 
     useEffect(() => {
         getInquiry();
-    },[])
+    },[count])
     useEffect(() => {
         console.warn(inquiries);
     },[inquiries])

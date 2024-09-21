@@ -1,5 +1,4 @@
 import mongoose, { Schema, Document } from "mongoose";
-import {  } from "mongoose";
 
 export interface Inquiry extends Document{
     firstName: string;
@@ -7,6 +6,9 @@ export interface Inquiry extends Document{
     email: string;
     phone: number;
     countryCode: number;
+    createdAt: Date;
+    isSaved: boolean;
+    isOnline: boolean;
 }
 
 const InquirySchema: Schema<Inquiry> = new Schema({
@@ -24,7 +26,19 @@ const InquirySchema: Schema<Inquiry> = new Schema({
     },
     countryCode: {
         type: Number,
-    }
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
+    isSaved: {
+        type: Boolean,
+        default: false,
+    },
+    isOnline: {
+        type: Boolean,
+        default: true,
+    },
 })
 
 const InquiryModal = (mongoose.models.Inquiry as mongoose.Model<Inquiry> || mongoose.model<Inquiry>("Inquiry", InquirySchema))

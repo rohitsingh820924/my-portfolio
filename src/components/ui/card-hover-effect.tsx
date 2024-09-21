@@ -3,6 +3,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import CopyIcon from "../CopyIcon";
+import SwitchBox from "./switch";
+import SaveIcon from "../SaveIcon"
+import { MdDeleteOutline } from "react-icons/md";
+import { FiEdit } from "react-icons/fi";
+import DeleteDialog from "../DeleteDialog";
+import EditPopup from "../EditPopup";
 
 export const HoverEffect = ({
   items,
@@ -14,22 +20,28 @@ export const HoverEffect = ({
     email: string;
     phone: number;
     countryCode: number;
+    isSaved: boolean;
+    isOnline: boolean;
     _id: string;
   }[];
   className?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [id, setId] = useState("");
+  const [deleteModal, setDeleteModal] = useState(false);
+  const [editModal, setEditModal] = useState(false);
 
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2 py-10",
         className
       )}
     >
       {items?.map((item, idx) => (
         <Link
-          href={`mailto:${item?.email}`}
+          href="#"
+          // {`mailto:${item?.email}`}
           key={item?._id}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
@@ -53,12 +65,22 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
+            <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center gap-2 rounded-full bg-gray-50 dark:bg-zinc-800 px-3 py-2">
+                  <SaveIcon state={item.isSaved} id={item._id}/>
+                <SwitchBox state={item.isOnline} id={item._id} />
+                <FiEdit color='white' size={22} onClick={()=>{setId(item._id), setEditModal(true)}}/>
+                <MdDeleteOutline color='red' size={25} onClick={()=>{setId(item._id), setDeleteModal(true)}}/>
+              </div>
+            </div>
             <CardTitle>{item.firstName}&nbsp;{item.lastName} <CopyIcon text={`${item.firstName} ${item.lastName}`} /> </CardTitle>
             <CardDescription>{item.email} <CopyIcon text={item.email} /></CardDescription>
             <CardDescription>+{item.countryCode}&nbsp;{item.phone} <CopyIcon text={`+${item.countryCode} ${item.phone}`} /></CardDescription>
           </Card>
         </Link>
       ))}
+      <EditPopup id={id} open={editModal} onClose={() => setEditModal(false)}/>
+      <DeleteDialog id={id} open={deleteModal} onClose={() => setDeleteModal(false)} />
     </div>
   );
 };
@@ -106,7 +128,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-3 dark:text-neutral-300 text-neutral-950 tracking-wide leading-relaxed text-sm",
         className
       )}
     >

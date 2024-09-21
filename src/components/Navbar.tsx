@@ -33,7 +33,7 @@ export default function Navbar({ className }: { className?: string }) {
       firstName: "",
       lastName: "",
       phone: "",
-      countryCode: ""
+      countryCode: "+91"
     }); 
   
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -67,7 +67,7 @@ export default function Navbar({ className }: { className?: string }) {
             firstName: "",
             lastName: "",
             phone: "",
-            countryCode: ""
+            countryCode: "+91"
           })
   
           setIsSubmitting(false);

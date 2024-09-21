@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import dbConnect from '@/lib/dnConnect';
+import dbConnect from '@/lib/dbConnect';
 import jwt from 'jsonwebtoken'
 
 export async function POST(req: NextRequest, res: NextResponse) {

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FaRegCopy } from "react-icons/fa6";
+import { IoCheckmarkDoneOutline } from "react-icons/io5";
 
 interface CopyIconProps {
     text: string;
@@ -21,8 +23,8 @@ interface CopyIconProps {
   };
 
   return (
-    <span onClick={handleCopyClick} style={{ cursor: 'pointer', marginLeft: '5px' }}>
-      {isCopied ? '✓' : '📋'}
+    <span onClick={handleCopyClick} className='cursor-pointer ml-2 inline-block'>
+      {isCopied ? < IoCheckmarkDoneOutline /> : <FaRegCopy />}
     </span>
   );
 };
