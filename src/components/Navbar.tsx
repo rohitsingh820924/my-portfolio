@@ -108,27 +108,27 @@ export default function Navbar({ className }: { className?: string }) {
             <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 p-4">
               <ProductItem
                 title="Frontend"
-                href="https://algochurn.com"
+                href="#"
                 src="/images/services/frontend.jpg"
-                description="Prepare for tech interviews like never before."
+                description="Building responsive, dynamic, and interactive web interfaces."
               />
               <ProductItem
                 title="Web"
-                href="https://tailwindmasterkit.com"
+                href="#"
                 src="/images/services/web-design.jpg"
-                description="Production ready Tailwind css components for your next project"
+                description="Crafting functional websites using modern web technologies."
               />
               <ProductItem
                 title="UI/UX"
-                href="https://gomoonbeam.com"
+                href="#"
                 src="/images/services/ui-ux.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
+                description="Designing user-friendly, visually appealing digital experiences."
               />
               <ProductItem
                 title="Grphics"
-                href="https://userogue.com"
+                href="#"
                 src="/images/services/graphic.jpg"
-                description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+                description="Creating engaging videos and stunning visuals for branding."
               />
             </div>
           </MenuItem>
