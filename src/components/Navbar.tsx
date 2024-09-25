@@ -13,6 +13,7 @@ import { Label } from "./ui/label";
 import { BottomGradient, LabelInputContainer } from "./InputBox";
 import { toast, ToastContainer } from "react-toastify";
 import FloatingIcons from "./FloatingIcons";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export default function Navbar({ className }: { className?: string }) {
     const [active, setActive] = useState<string | null>(null);
@@ -191,7 +192,8 @@ export default function Navbar({ className }: { className?: string }) {
       <ToastContainer />
           </ModalContent>
         </ModalBody>
-      </Modal>
+          </Modal>
+        <ThemeSwitcher />
         </Menu>
       </div>
     );

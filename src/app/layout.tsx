@@ -5,6 +5,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from "@/components/Header";
 import { ReduxProvider } from "./redux-provider";
+import { ThemeProvider } from 'next-themes';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -14,20 +16,22 @@ export const metadata: Metadata = {
   keywords: "Rohit Singh, portfolio, web design, frontend development, ReactJS, NextJS, Figma",
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      
-      <body className={inter.className} suppressHydrationWarning={true}>
-      <Header />
-      <ReduxProvider>{children}</ReduxProvider>
+    <html lang="en">
+      <body className={`${inter.className}`} suppressHydrationWarning={true}>
+        <ThemeProvider attribute="class">
+          <ReduxProvider>
+            <Header />
+            {children}
+          </ReduxProvider>
+        </ThemeProvider>
         <ToastContainer />
-        </body>
+      </body>
     </html>
   );
 }

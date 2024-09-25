@@ -2,15 +2,13 @@ import React from "react";
 import { FlipWords } from "./ui/flip-words";
 
 export default function FlipTitle() {
-  const words = ["better", "cute", "beautiful", "modern"];
+  const words = ["Web Designs", "Frontend Projects", "Digital Experiences", "Interfaces"];
 
   return (
-    <div className="h-auto flex justify-center items-center dark:bg-black bg-white p-4">
-      <div className="text-4xl mx-auto font-bold text-neutral-600 dark:text-neutral-400">
-        Build
+      <h1 className="text-4xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-950 to-neutral-400 dark:from-neutral-50 dark:to-neutral-400  bg-opacity-50">
+      Hi, I'm Rohit Singh: Creating Engaging<br />
         <FlipWords words={words} /> <br />
-        websites for your business!
-      </div>
-    </div>
+        That Stand Out
+      </h1>
   );
 }
