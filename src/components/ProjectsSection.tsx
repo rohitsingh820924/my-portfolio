@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
-import { link } from "fs";
+import { motion } from 'framer-motion';
 
 const content = [
   {
@@ -160,8 +160,38 @@ const content = [
   },
 ];
 export function ProjectSection() {
+  const [isPinned, setIsPinned] = useState(false);
+  const sectionRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Check if the section is fully within the viewport
+        if (entry.isIntersecting) {
+          setIsPinned(true);
+        } else {
+          setIsPinned(false);
+        }
+      },
+      {
+        threshold: 1.0, // Fires when the entire section is fully in view
+      }
+    );
+
+    const section = sectionRef.current;
+    if (section) observer.observe(section);
+
+    return () => {
+      if (section) observer.unobserve(section);
+    };
+  }, []);
   return (
-    <div className="">
+    <div 
+      // ref={sectionRef}
+      // initial={{ opacity: 0, y: 50 }}
+      // animate={isPinned ? { opacity: 1, y: 0, position: 'fixed', top: 0 } : { opacity: 1, y: 0 }}
+      // transition={{ duration: 0.5 }}
+      className="dark:bg-black bg-white">
+      <h2 className="text-4xl md:text-5xl font-bold text-center dark:text-neutral-300 text-neutral-950  pt-10 mb-20">My Projects</h2>
       <StickyScroll content={content} />
     </div>
   );

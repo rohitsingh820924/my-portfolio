@@ -16,8 +16,8 @@ export function ThemeSwitcher() {
 
   return (
 
-        <div className="rounded-full h-8 w-16 border dark:border-white/[0.2]" onClick={() => {  theme==="dark" ? setTheme("light") : setTheme("dark") }}>
-            <div className="rounded-full bg-neutral-800 w-5 aspect-square translate-x-1 translate-y-1 dark:bg-neutral-100 dark:translate-x-9 transition-all"></div>
+        <div className="rounded-full h-6 w-12 border dark:border-white/[0.2]" onClick={() => {  theme==="dark" ? setTheme("light") : setTheme("dark") }}>
+            <div className="rounded-full bg-neutral-800 w-4 aspect-square translate-x-1 translate-y-[3px] dark:bg-neutral-100 dark:translate-x-7 transition-all"></div>
         </div>
   );
 }
