@@ -2,6 +2,8 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "./ui/Spotlight";
 import FlipTitle from "./FlipTitle";
+import DownloadBtn from "./DownloadBtn";
+import MainSkills from "./MainSkills";
 
 
 export const HeroSection = () => {
@@ -17,9 +19,13 @@ export const HeroSection = () => {
         </h1> */}
         <FlipTitle />
 
-        <p className="md:mt-12 mt-6 font-normal  md:text-base text-xs dark:text-neutral-300 text-neutral-950 max-w-3xl text-center mx-auto">
+        {/* <p className="md:mt-12 mt-6 font-normal  md:text-base text-xs dark:text-neutral-300 text-neutral-950 max-w-3xl text-center mx-auto">
         I design responsive, user-friendly websites using React.js for dynamic interfaces and Next.js for improved performance through server-side rendering. These technologies help me create fast, SEO-optimized, and visually appealing web experiences.
-        </p>
+        </p> */}
+
+        <MainSkills />
+
+        <DownloadBtn />
       </div>
     </div>
   )

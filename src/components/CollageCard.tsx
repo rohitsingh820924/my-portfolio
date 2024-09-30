@@ -8,7 +8,7 @@ import { Span } from "next/dist/trace";
 export default function CollageCard() {
   return (
     <div className="p-10 dark:bg-black bg-white">
-        <h2 className="text-4xl md:text-5xl font-bold text-center dark:text-neutral-300 text-neutral-950 mb-10">MY Education</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-center dark:text-neutral-300 text-neutral-950 mb-10">My Education</h2>
       <div className="max-w-7xl mx-auto w-100 grid grid-cols-1 md:grid-cols-2 gap-10">
         <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900 h-full flex flex-col justify-between">
             <div>
