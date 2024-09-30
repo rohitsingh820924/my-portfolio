@@ -15,9 +15,47 @@ export function ThemeSwitcher() {
   if (!mounted) return null;
 
   return (
-
-        <div className="rounded-full h-6 w-12 border dark:border-white/[0.2]" onClick={() => {  theme==="dark" ? setTheme("light") : setTheme("dark") }}>
-            <div className="rounded-full bg-neutral-800 w-4 aspect-square translate-x-1 translate-y-[3px] dark:bg-neutral-100 dark:translate-x-7 transition-all"></div>
-        </div>
+    <div
+      className="rounded-full h-10 p-1 border dark:border-white/[0.2]"
+      onClick={() => {
+        theme === "dark" ? setTheme("light") : setTheme("dark");
+      }}
+    >
+      <svg
+        id="sunmoon"
+        width="100%"
+        height="100%"
+        viewBox="0 0 200 200"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <defs>
+          <mask id="hole">
+            <rect width="100%" height="100%" fill="white" />
+            <circle
+              id="overlay"
+              className="transition-all dark:translate-x-[-90px] dark:translate-y-[90px]"
+              r="80"
+              cx="230"
+              cy="-30"
+              fill="black"
+            />
+          </mask>
+          <filter id="blur">
+            <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="gold" />
+          </filter>
+        </defs>
+        <g filter="url(#blur)">
+          <circle
+            fill="gold"
+            id="donut"
+            r="80"
+            cx="100"
+            cy="100"
+            mask="url(#hole)"
+            className="transition-all dark:fill-white fill-yellow-400"
+          />
+        </g>
+      </svg>
+    </div>
   );
 }
