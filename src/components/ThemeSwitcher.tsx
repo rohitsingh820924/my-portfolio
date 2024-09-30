@@ -16,7 +16,7 @@ export function ThemeSwitcher() {
 
   return (
     <div
-      className="rounded-full h-10 p-1 border dark:border-white/[0.2]"
+      className="rounded-full md:h-10 h-[30px] p-1 border dark:border-white/[0.2]"
       onClick={() => {
         theme === "dark" ? setTheme("light") : setTheme("dark");
       }}

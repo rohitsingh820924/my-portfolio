@@ -106,7 +106,7 @@ export default function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Products">
-            <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 p-4">
+            <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 md:p-4 mx-auto">
               <ProductItem
                 title="Frontend"
                 href="#"
@@ -134,7 +134,7 @@ export default function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
           <Modal>
-        <ModalTrigger className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+        <ModalTrigger className="border text-xs md:text-sm relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white md:px-4 md:py-2 px-3 py-1.5 rounded-full">
           <span className="">
             Contect
           </span>
