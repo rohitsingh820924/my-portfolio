@@ -98,12 +98,10 @@ export const DesktopSidebar = ({
 >
   <span
     onClick={() => setOpen(!open)}
-    className={`fixed z-10 top-4 transition-all ${open ? "translate-x-[170px]" : ""}`}
+    className={`fixed z-10 top-4 transition-all ${open ? "translate-x-36" : ""}`}
   >
     <IconArrowLeft
-      className={`text-neutral-700 dark:text-neutral-200 h-5 w-5 transition-all rotate-180 flex-shrink-0 ${
-        open ? "rotate-0" : ""
-      }`}
+      className={`text-neutral-700 dark:text-neutral-200 h-5 w-5 transition-all flex-shrink-0 ${open ? "rotate-0" : "rotate-180"}`}
     />
   </span>
   {children} 

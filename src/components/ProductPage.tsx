@@ -8,6 +8,7 @@ export function ProductPage() {
   return (
     <TracingBeam className="px-6">
       <div className="mx-auto antialiased pt-4 relative">
+        <h1 className="text-4xl font-bold text-black dark:text-white my-10">Best Way To Make Api Calls</h1>
         <CodeBlock code={dummyCode} language="typescript" />
         {dummyContent.map((item, index) => (
           <div key={`content-${index}`} className="mb-10">
@@ -15,18 +16,18 @@ export function ProductPage() {
               {item.badge}
             </h2>
 
-            <p className={("text-xl mb-4")}>
+            <p className={("text-xl text-black dark:text-white mb-4")}>
               {item.title}
             </p>
 
-            <div className="text-sm  prose prose-sm dark:prose-invert">
+            <div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert">
               {item?.image && (
                 <Image
                   src={item.image}
                   alt="blog thumbnail"
                   height="1000"
                   width="1000"
-                  className="rounded-lg mb-10 object-cover"
+                  className="rounded-lg mb-10 w-full h-auto object-cover"
                 />
               )}
               {item.description}

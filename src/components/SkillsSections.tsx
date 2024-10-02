@@ -76,6 +76,12 @@ const testimonialsCode = [
   },
   {
     quote:
+      "Skilled in Node.js, I build efficient, scalable backends using its event-driven architecture for high-performance web services.",
+    image: "/images/skills/nodejs.png",
+    title: "NodeJs",
+  },
+  {
+    quote:
       "Experienced with SCSS, I streamline and enhance CSS with variables, nested rules, and modular styles, improving maintainability and scalability in web design.",
     image: "/images/skills/scss.png",
     title: "SCSS",

@@ -1,11 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from 'react-redux'
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
 import { FaReact, FaNodeJs, FaDesktop } from 'react-icons/fa';
 import { SiVercel } from 'react-icons/si';
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { setOpenMenu } from "@/lib/store/slices/sidemenuSlice";
 
 export default function Sidemenu() {
   const links = [
@@ -38,19 +40,26 @@ export default function Sidemenu() {
       ),
     },
   ];
+
+  const openMenu = useSelector((state:any) => state.openMenu.value)
+  const dispatch = useDispatch()
   const [open, setOpen] = useState(false);
+
+  useEffect(()=> {
+    dispatch(setOpenMenu(open));
+  },[open])
   return (
-    <div>
+    <div className={`transition-all ${openMenu ? 'md:w-[200px]' : 'md:w-[60px]'}`}>
       <Sidebar open={open} setOpen={setOpen}>
         <SidebarBody className="justify-between gap-10">
-          <div className="fixed h-svh pb-10 flex flex-col flex-1 justify-between overflow-y-auto overflow-x-hidden">
-            <div className="mt-8 flex flex-col gap-2">
+          <div className="fixed mt-8 z-10 h-[calc(100svh-32px)] pb-10 flex flex-col flex-1 justify-between overflow-y-auto overflow-x-hidden">
+            <div className="z-9 flex flex-col gap-2">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
               ))}
             </div>
             <div>
-                <ThemeSwitcher />
+                <ThemeSwitcher className="h-6" />
             </div>
           </div>
         </SidebarBody>

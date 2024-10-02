@@ -136,7 +136,7 @@ export default function Navbar({ className }: { className?: string }) {
           <Modal>
         <ModalTrigger className="border text-xs md:text-sm relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white md:px-4 md:py-2 px-3 py-1.5 rounded-full">
           <span className="">
-            Contect
+          Contact
           </span>
         </ModalTrigger>
         <ModalBody>
@@ -193,7 +193,7 @@ export default function Navbar({ className }: { className?: string }) {
           </ModalContent>
         </ModalBody>
           </Modal>
-        <ThemeSwitcher />
+        <ThemeSwitcher className="md:h-10 h-[30px]"/>
         </Menu>
       </div>
     );

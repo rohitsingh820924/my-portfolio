@@ -4,7 +4,11 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-export function ThemeSwitcher() {
+interface classNameType{
+  className: string;
+}
+
+export function ThemeSwitcher({className} : classNameType) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -16,7 +20,7 @@ export function ThemeSwitcher() {
 
   return (
     <div
-      className="rounded-full md:h-10 h-[30px] p-1 border dark:border-white/[0.2]"
+      className={`rounded-full p-1 aspect-square border cursor-pointer dark:border-white/[0.2] ${className}`}
       onClick={() => {
         theme === "dark" ? setTheme("light") : setTheme("dark");
       }}
