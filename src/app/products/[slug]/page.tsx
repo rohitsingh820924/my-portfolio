@@ -5,8 +5,9 @@ import { Blog } from "@/lib/types/blogType";
 import { Metadata } from 'next';
 
 // Function to fetch blog post for metadata
+const baseUrl = process.env.NEXT_BASE_URL;
 async function fetchBlogPostMetadata(slug: string): Promise<Blog> {
-  const data = await apiGet(`http://localhost:3000/api/blog/${slug}`);
+  const data = await apiGet(`${baseUrl}/api/blog/${slug}`);
   return data.blogPost;
 }
 
