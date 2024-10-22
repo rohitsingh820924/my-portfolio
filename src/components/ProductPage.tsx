@@ -9,12 +9,13 @@ import { format } from 'date-fns';
 interface ProductPageProps {
   blogPost: Blog;
 }
+
 export function ProductPage({ blogPost }: ProductPageProps) {
   return (
     <TracingBeam className="px-6">
       {blogPost ? (
         <div className="mx-auto antialiased pt-4 relative">
-          <h1 className="md:text-4xl text-2xl font-bold text-black dark:text-white md:my-10 my-5">
+          <h1 className="md:text-4xl text-2xl font-bold text-black dark:text-white md:mb-10 mb-5">
             {blogPost.title}
           </h1>
           {blogPost?.bannerImage && (
