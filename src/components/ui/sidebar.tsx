@@ -4,6 +4,7 @@ import Link, { LinkProps } from "next/link";
 import React, { useState, createContext, useContext, ReactNode, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX, IconArrowLeft } from "@tabler/icons-react";
+import { BiHomeAlt2 } from "react-icons/bi";
 
 interface Links {
   label: string;
@@ -124,7 +125,9 @@ export const MobileSidebar = ({
       )}
       {...props}
     >
-      <div className="flex justify-end z-20 w-full">
+      <div className="flex justify-between z-20 w-full items-center">
+      <Link href={"/"} className="bg-black dark:bg-white px-3 py-1.5 flex gap-2 dark:text-neutral-800 text-neutral-200 font-medium text-xs rounded-full"><BiHomeAlt2 className="text-sm"/>About Me</Link>
+
         <IconMenu2
           className="text-neutral-800 dark:text-neutral-200"
           onClick={() => setOpen(!open)}
