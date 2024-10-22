@@ -7,7 +7,7 @@ import blogsReducer from '@/lib/store/slices/blogSlice';
 export function makeStore() {
   return configureStore({
     reducer: {
-      isDark: userReducer,
+      user: userReducer,
       openMenu: sidemenuReducer,
       blogs: blogsReducer,
     },
