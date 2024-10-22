@@ -8,6 +8,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { setOpenMenu } from "@/lib/store/slices/sidemenuSlice";
+import { BiHomeAlt2 } from "react-icons/bi";
 
 export default function Sidemenu() {
   const links = [
@@ -72,8 +73,9 @@ export default function Sidemenu() {
                 <SidebarLink key={idx} link={link} />
               ))}
             </div>
-            <div>
-                <ThemeSwitcher className="h-6" />
+            <div className={`transition-all duration-1000 flex-row gap-3 md:flex hidden ${open ? "" : "flex-col-reverse"}`}>
+              <ThemeSwitcher className="h-6" />
+              <Link href={"/"} className={`bg-black dark:bg-white transition-all flex items-center justify-center gap-2 dark:text-neutral-800 text-neutral-200 font-medium text-[15px] rounded-full ${open ? "px-3 py-1.5" : "aspect-square w-full max-w-7"}`}><BiHomeAlt2/><span className={`transition-all text-sm ${open ? "block opacity-1" : "hidden opacity-0"}`}>About Me</span></Link>
             </div>
           </div>
         </SidebarBody>

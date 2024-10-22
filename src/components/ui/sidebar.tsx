@@ -5,6 +5,7 @@ import React, { useState, createContext, useContext, ReactNode, useEffect } from
 import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX, IconArrowLeft } from "@tabler/icons-react";
 import { BiHomeAlt2 } from "react-icons/bi";
+import { ThemeSwitcher } from "../ThemeSwitcher";
 
 interface Links {
   label: string;
@@ -87,6 +88,7 @@ export const DesktopSidebar = ({
 }: React.ComponentProps<any>) => {
   const { open, setOpen, animate } = useSidebar();
   return (
+    <>
     <motion.div
   className={cn(
     "h-svh px-4 py-4 hidden md:flex md:flex-col bg-neutral-100 dark:bg-neutral-800 w-[200px] flex-shrink-0 relative",
@@ -107,7 +109,7 @@ export const DesktopSidebar = ({
   </span>
   {children} 
 </motion.div>
-
+    </>
   );
 };
 
@@ -127,11 +129,13 @@ export const MobileSidebar = ({
     >
       <div className="flex justify-between z-20 w-full items-center">
       <Link href={"/"} className="bg-black dark:bg-white px-3 py-1.5 flex gap-2 dark:text-neutral-800 text-neutral-200 font-medium text-xs rounded-full"><BiHomeAlt2 className="text-sm"/>About Me</Link>
-
+        <div className="flex justify-between align-middle gap-3">
+        <ThemeSwitcher className="h-6" />
         <IconMenu2
           className="text-neutral-800 dark:text-neutral-200"
           onClick={() => setOpen(!open)}
         />
+        </div>
       </div>
       <AnimatePresence>
         {open && (
