@@ -17,6 +17,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
+import { format } from 'date-fns';
 
 export default function DataTable() {
   const dispatch = useDispatch<AppDispatch>();
@@ -60,7 +61,13 @@ export default function DataTable() {
       ),
       flex: 0.1
     },
-    { field: 'createdAt', headerName: 'Date', type: 'number', flex: 0.1 },
+    { field: 'createdAt', headerName: 'Date', type: 'number',
+      renderCell: (params) => (
+        <div className='flex items-center gap-5 h-full'>
+          {format(new Date(params.row.createdAt), 'dd MMMM yyyy')}
+        </div>
+      ),
+      flex: 0.1 },
     {
       field: 'action',
       headerName: 'Action',

@@ -26,7 +26,7 @@ export function ProductPage({ blogPost }: ProductPageProps) {
               className="rounded-lg md:mb-10 mb-5 w-full h-auto object-cover"
             />
           )}
-          <div className="mb-5 flex gap-3 flex-col sm:flex-row justify-between">
+          <div className="mb-5 flex gap-3 flex-wrap justify-between">
             <div className="flex gap-3">
               {blogPost.badge?.map((item, i) => (
                 <span
