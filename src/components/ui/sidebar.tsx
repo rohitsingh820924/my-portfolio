@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Link, { LinkProps } from "next/link";
-import React, { useState, createContext, useContext, ReactNode } from "react";
+import React, { useState, createContext, useContext, ReactNode, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX, IconArrowLeft } from "@tabler/icons-react";
 
@@ -169,6 +169,11 @@ export const SidebarLink = ({
   props?: Omit<LinkProps, "href">;
 }) => {
   const { open, animate } = useSidebar();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
   return (
     <Link
       href={link.href}
@@ -180,9 +185,16 @@ export const SidebarLink = ({
     >
       {link.icon}
       <motion.span
-        animate={{
-          display: animate ? (open ? "inline-block" : "none") : "none",
-          opacity: animate ? (open ? 1 : 0) : 0,
+        style={{
+          display: isLoaded
+            ? animate
+              ? open
+                ? "inline-block"
+                : "none"
+              : "none"
+            : "none",
+          opacity: isLoaded && animate ? (open ? 1 : 0) : 0,
+          transition: "opacity 0.3s ease-in-out",
         }}
         className="text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
       >

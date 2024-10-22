@@ -4,6 +4,8 @@ import Image from "next/image";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import CodeBlock from "./CodeBlock";
 import { Blog } from "@/lib/types/blogType";
+import { format } from 'date-fns';
+
 interface ProductPageProps {
   blogPost: Blog;
 }
@@ -12,7 +14,7 @@ export function ProductPage({ blogPost }: ProductPageProps) {
     <TracingBeam className="px-6">
       {blogPost ? (
         <div className="mx-auto antialiased pt-4 relative">
-          <h1 className="text-4xl font-bold text-black dark:text-white my-10">
+          <h1 className="md:text-4xl text-2xl font-bold text-black dark:text-white md:my-10 my-5">
             {blogPost.title}
           </h1>
           {blogPost?.bannerImage && (
@@ -21,18 +23,25 @@ export function ProductPage({ blogPost }: ProductPageProps) {
               alt="blog thumbnail"
               height="1000"
               width="1000"
-              className="rounded-lg mb-10 w-full h-auto object-cover"
+              className="rounded-lg md:mb-10 mb-5 w-full h-auto object-cover"
             />
           )}
-          <div className="mb-5 flex gap-3">
-            {blogPost.badge?.map((item, i) => (
-              <span
-                key={i}
-                className="bg-black text-white rounded-full text-sm w-fit px-4 py-1"
-              >
-                {item}
+          <div className="mb-5 flex gap-3 flex-col sm:flex-row justify-between">
+            <div className="flex gap-3">
+              {blogPost.badge?.map((item, i) => (
+                <span
+                  key={i}
+                  className="bg-black text-white rounded-full text-sm w-fit px-4 py-1"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            
+              <span className="bg-black text-white rounded-full text-sm w-fit px-4 py-1">
+                {format(new Date(blogPost.createdAt), 'dd MMMM yyyy')}
               </span>
-            ))}
+          
           </div>
           <div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert">
             {blogPost.bannerDescription}
@@ -40,7 +49,7 @@ export function ProductPage({ blogPost }: ProductPageProps) {
           {blogPost?.items?.map((item, i) => {
             return (
               <div key={i}>
-                <h3 className="text-2xl font-bold text-black dark:text-white my-5">
+                <h3 className="md:text-2xl text-lg font-bold text-black dark:text-white my-5">
                   {item.heading}
                 </h3>
                 {item?.image && (
@@ -61,7 +70,7 @@ export function ProductPage({ blogPost }: ProductPageProps) {
           })}
         </div>
       ) : (
-        <div className="my-10">
+        <div className="mb-10 pt-4">
           <div>
             <div className="h-10 bg-gray-200 rounded dark:bg-gray-700 w-full mb-3"></div>
             <div className="h-10 bg-gray-200 rounded dark:bg-gray-700 w-2/3"></div>
@@ -79,9 +88,12 @@ export function ProductPage({ blogPost }: ProductPageProps) {
             </svg>
           </div>
 
+          <div className="flex justify-between">
           <div className="flex gap-5">
-            <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-28"></div>
-            <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-28"></div>
+            <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-20"></div>
+              <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-20"></div>
+            </div>
+            <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-40"></div>
           </div>
 
           {
