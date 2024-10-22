@@ -6,7 +6,7 @@ const Header = () => {
     const pathname = usePathname()
   return (
     <>
-    {pathname === '/' && <Navbar className="top-5 left-3 right-3" />}
+    {(pathname === "/" || pathname === "/dashboard") && <Navbar className="top-5 left-3 right-3" />}
     </>
   )
 }

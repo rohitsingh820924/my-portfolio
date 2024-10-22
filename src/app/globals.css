@@ -60,3 +60,35 @@ pre {
   border-radius: 0.5rem 0.5rem;
   margin: 30px 0 !important;
 }
+
+/* styles/nprogress.css */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #29d; /* Change the color of the progress bar */
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Height of the progress bar */
+}
+
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  z-index: 1031;
+  height: 2px;
+  right: 0;
+  width: 100px; /* Length of the peg */
+  background: #29d; /* Color of the peg */
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d; /* Shadow for the peg */
+  opacity: 1.0;
+  transform: translate3d(0, 0, 0);
+}
+
+#nprogress .spinner {
+  display: none; /* Hide the spinner if not needed */
+}

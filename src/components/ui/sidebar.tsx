@@ -98,7 +98,7 @@ export const DesktopSidebar = ({
 >
   <span
     onClick={() => setOpen(!open)}
-    className={`fixed z-10 top-4 transition-all ${open ? "translate-x-36" : ""}`}
+    className={`fixed cursor-pointer z-10 top-4 transition-all ${open ? "translate-x-36" : ""}`}
   >
     <IconArrowLeft
       className={`text-neutral-700 dark:text-neutral-200 h-5 w-5 transition-all flex-shrink-0 ${open ? "rotate-0" : "rotate-180"}`}
@@ -181,8 +181,8 @@ export const SidebarLink = ({
       {link.icon}
       <motion.span
         animate={{
-          display: animate ? (open ? "inline-block" : "none") : "inline-block",
-          opacity: animate ? (open ? 1 : 0) : 1,
+          display: animate ? (open ? "inline-block" : "none") : "none",
+          opacity: animate ? (open ? 1 : 0) : 0,
         }}
         className="text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
       >

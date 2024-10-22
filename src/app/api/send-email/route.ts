@@ -31,10 +31,12 @@ export async function POST(req: NextRequest, res: NextResponse) {
     subject: 'New Email Submission', // Subject line
     text: `User submitted: ${email}`, // plain text body
     html: `
-      <h1>New Email Submission</h1>
-      <p>Hi Rohit, ${firstName} ${lastName} has Submmited an Email.</p>
-      <p>Email: <strong>${email}</strong></p>
+      <div style="border: 1px solid #f2f2f2; background-color: #eeeeee; max-width: 400px"; margin-auto;">
+      <h1 style="background-color: #45a945; padding: 20px; text-align: center; margin-bottom: 20px; margin-top: 0px; font-size: 32px; color: #ffffff;">New Email Submission</h1>
+      <p style="margin-bottom: 10px;">Hi Rohit, ${firstName} ${lastName} has Submmited an Email.</p>
+      <p style="margin-bottom: 10px;">Email: <strong>${email}</strong></p>
       <p>Phone No: <strong>+${countryCode} ${phone}</strong></p>
+      <div>
     `, // HTML body
   };
 

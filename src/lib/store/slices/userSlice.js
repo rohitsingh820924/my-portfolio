@@ -3,18 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-  value: 0,
+  value: false,
 };
 
 const userSlice = createSlice({
-  name: "users",
+  name: "isDark",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value++;
+    setDarkMode: (state,action) => {
+      state.value=action.payload;
     },
   },
 });
 
-export const { increment } = userSlice.actions;
+export const { setDarkMode } = userSlice.actions;
 export default userSlice.reducer;

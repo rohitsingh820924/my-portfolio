@@ -35,12 +35,11 @@ export default function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        console.log('Email sent successfully!');
-        toast.success("Thanks For Connecting", {
+        router.push('/dashboard')
+        toast.success("Logged In", {
           theme: "dark"
         });
         setOtp("")
-        router.push('/dashboard')
 
 
         setIsSubmitting(false);

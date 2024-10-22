@@ -14,8 +14,10 @@ import { BottomGradient, LabelInputContainer } from "./InputBox";
 import { toast, ToastContainer } from "react-toastify";
 import FloatingIcons from "./FloatingIcons";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { useRouter } from "next/navigation";
 
 export default function Navbar({ className }: { className?: string }) {
+    const router = useRouter()
     const [active, setActive] = useState<string | null>(null);
     const countryCodes = [
       { country: 'India', code: 'IN', mobileCode: '+91' },
@@ -105,34 +107,36 @@ export default function Navbar({ className }: { className?: string }) {
               <HoveredLink href="/branding">Video Editing</HoveredLink>
             </div>
           </MenuItem>
+          <div onClick={()=>router.push('/products')}>
           <MenuItem setActive={setActive} active={active} item="Products">
             <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 md:p-4 mx-auto">
               <ProductItem
                 title="Frontend"
-                href="#"
+                href="/products/frontend"
                 src="/images/services/frontend.jpg"
                 description="Building responsive, dynamic, and interactive web interfaces."
               />
               <ProductItem
                 title="Web"
-                href="#"
+                href="/products/web"
                 src="/images/services/web-design.jpg"
                 description="Crafting functional websites using modern web technologies."
               />
               <ProductItem
                 title="UI/UX"
-                href="#"
+                href="uix"
                 src="/images/services/ui-ux.png"
                 description="Designing user-friendly, visually appealing digital experiences."
               />
               <ProductItem
                 title="Grphics"
-                href="#"
+                href="graphic"
                 src="/images/services/graphic.jpg"
                 description="Creating engaging videos and stunning visuals for branding."
               />
             </div>
           </MenuItem>
+          </div>
           <Modal>
         <ModalTrigger className="border text-xs md:text-sm relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white md:px-4 md:py-2 px-3 py-1.5 rounded-full">
           <span className="">

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
+
 const transition = {
   type: "spring",
   mass: 0.5,
@@ -24,6 +25,7 @@ export const MenuItem = ({
   item: string;
   children?: React.ReactNode;
 }) => {
+
   return (
     <div onMouseEnter={() => setActive(item)} className="md:relative ">
       <motion.p

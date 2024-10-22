@@ -3,146 +3,158 @@ import React from "react";
 import Image from "next/image";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import CodeBlock from "./CodeBlock";
-
-export function ProductPage() {
+import { Blog } from "@/lib/types/blogType";
+interface ProductPageProps {
+  blogPost: Blog;
+}
+export function ProductPage({ blogPost }: ProductPageProps) {
   return (
     <TracingBeam className="px-6">
-      <div className="mx-auto antialiased pt-4 relative">
-        <h1 className="text-4xl font-bold text-black dark:text-white my-10">Best Way To Make Api Calls</h1>
-        <CodeBlock code={dummyCode} language="typescript" />
-        {dummyContent.map((item, index) => (
-          <div key={`content-${index}`} className="mb-10">
-            <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
-              {item.badge}
-            </h2>
-
-            <p className={("text-xl text-black dark:text-white mb-4")}>
-              {item.title}
-            </p>
-
-            <div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert">
-              {item?.image && (
-                <Image
-                  src={item.image}
-                  alt="blog thumbnail"
-                  height="1000"
-                  width="1000"
-                  className="rounded-lg mb-10 w-full h-auto object-cover"
-                />
-              )}
-              {item.description}
-            </div>
+      {blogPost ? (
+        <div className="mx-auto antialiased pt-4 relative">
+          <h1 className="text-4xl font-bold text-black dark:text-white my-10">
+            {blogPost.title}
+          </h1>
+          {blogPost?.bannerImage && (
+            <Image
+              src={blogPost.bannerImage as any}
+              alt="blog thumbnail"
+              height="1000"
+              width="1000"
+              className="rounded-lg mb-10 w-full h-auto object-cover"
+            />
+          )}
+          <div className="mb-5 flex gap-3">
+            {blogPost.badge?.map((item, i) => (
+              <span
+                key={i}
+                className="bg-black text-white rounded-full text-sm w-fit px-4 py-1"
+              >
+                {item}
+              </span>
+            ))}
           </div>
-        ))}
-      </div>
+          <div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert">
+            {blogPost.bannerDescription}
+          </div>
+          {blogPost?.items?.map((item, i) => {
+            return (
+              <div key={i}>
+                <h3 className="text-2xl font-bold text-black dark:text-white my-5">
+                  {item.heading}
+                </h3>
+                {item?.image && (
+                  <Image
+                    src={item.image as any}
+                    alt="blog thumbnail"
+                    height="1000"
+                    width="1000"
+                    className="rounded-lg mb-10 w-full h-auto object-cover"
+                  />
+                )}
+                <div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert">
+                  {item.description}
+                </div>
+                <CodeBlock code={item.code} language="javascript" />
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="my-10">
+          <div>
+            <div className="h-10 bg-gray-200 rounded dark:bg-gray-700 w-full mb-3"></div>
+            <div className="h-10 bg-gray-200 rounded dark:bg-gray-700 w-2/3"></div>
+          </div>
+
+          <div className="flex items-center justify-center w-full h-auto aspect-video bg-gray-300 rounded dark:bg-gray-900 my-5">
+            <svg
+              className="w-10 h-10 text-gray-200 dark:text-gray-600"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 18"
+            >
+              <path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
+            </svg>
+          </div>
+
+          <div className="flex gap-5">
+            <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-28"></div>
+            <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-28"></div>
+          </div>
+
+          {
+            Array.from({length: 3}, (_, i) => (
+              <div key={i}>
+                <div className="my-5">
+            <div className="h-8 bg-gray-200 rounded dark:bg-gray-700 w-2/3 mb-5"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 w-full mb-3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 w-full mb-3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 w-1/3"></div>
+          </div>
+
+          <div className="flex items-center justify-center w-full h-auto aspect-video bg-gray-300 rounded dark:bg-gray-900 my-5">
+            <svg
+              className="w-10 h-10 text-gray-200 dark:text-gray-600"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 18"
+            >
+              <path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
+            </svg>
+          </div>
+
+          <div className="my-5 p-4 border rounded-lg bg-gray-100 dark:bg-gray-800">
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-3/4"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/2"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-5/6"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-2/3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-3/4"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-4/5"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/2"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-2/5"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-full"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-5/6"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-3/4"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-2/3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/2"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-4/5"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-3/4"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-2/3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/2"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-full"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/4"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-3/4"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/2"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-5/6"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-2/3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-3/4"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-4/5"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/2"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-2/5"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-full"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-5/6"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-3/4"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-2/3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/2"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-4/5"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-3/4"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-2/3"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/2"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-full"></div>
+            <div className="h-3 bg-gray-200 rounded dark:bg-gray-700 mb-2 w-1/4"></div>
+          </div>
+              </div>
+            ))
+          }
+        </div>
+      )}
     </TracingBeam>
   );
 }
-
-const dummyContent = [
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse
-          adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt
-          Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt
-          incididunt enim magna id est qui sunt fugiat. Laboris do duis pariatur
-          fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore
-          nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in
-          occaecat reprehenderit laborum nostrud fugiat voluptate do Lorem culpa
-          officia sint labore. Tempor consectetur excepteur ut fugiat veniam
-          commodo et labore dolore commodo pariatur.
-        </p>
-        <p>
-          Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad
-          veniam in commodo id reprehenderit adipisicing. Proident duis
-          exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.
-        </p>
-        <p>
-          Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod
-          reprehenderit deserunt amet laborum consequat adipisicing officia qui
-          irure id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud.
-          Amet culpa officia aliquip deserunt veniam deserunt officia
-          adipisicing aliquip proident officia sunt.
-        </p>
-      </>
-    ),
-    badge: "React",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-        <p>
-          In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse
-          veniam fugiat esse qui sint ad sunt reprehenderit do qui proident
-          reprehenderit. Laborum exercitation aliqua reprehenderit ea sint
-          cillum ut mollit.
-        </p>
-      </>
-    ),
-    badge: "Changelog",
-    image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-      </>
-    ),
-    badge: "Launch Week",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-];
-
-const dummyCode = `
-interface User {
-  id: number;
-  name: string;
-  email: string;
-}
-
-const fetchUserData = async (userId: number): Promise<User> => {
-  try {
-    const response = await fetch(\`https://jsonplaceholder.typicode.com/users/\${userId}\`);
-    if (!response.ok) throw new Error('User not found');
-    return response.json();
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-const displayUser = async (userId: number): Promise<void> => {
-  try {
-    const user = await fetchUserData(userId);
-    console.log('User:', user);
-  } catch (error) {
-    console.log('Error:', error.message);
-  }
-};
-
-displayUser(1);
-`;

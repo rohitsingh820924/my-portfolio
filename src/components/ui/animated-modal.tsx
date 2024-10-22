@@ -48,7 +48,7 @@ export const ModalTrigger = ({
 }) => {
   const { setOpen } = useModal();
   return (
-    <button
+    <div
       className={cn(
         "px-4 py-2 rounded-md text-black dark:text-white text-center relative overflow-hidden",
         className
@@ -56,7 +56,7 @@ export const ModalTrigger = ({
       onClick={() => setOpen(true)}
     >
       {children}
-    </button>
+    </div>
   );
 };
 
@@ -78,8 +78,6 @@ export const ModalBody = ({
   }, [open]);
 
   const modalRef = useRef(null);
-  const { setOpen } = useModal();
-  useOutsideClick(modalRef, () => setOpen(false));
 
   return (
     <AnimatePresence>
@@ -96,14 +94,14 @@ export const ModalBody = ({
             opacity: 0,
             backdropFilter: "blur(0px)",
           }}
-          className="fixed top-0 [perspective:800px] [transform-style:preserve-3d] h-full w-full flex items-center justify-center z-50 p-3"
+          className="fixed left-0 top-0 [perspective:800px] [transform-style:preserve-3d] h-full w-full flex items-center justify-center z-50 p-3"
         >
           <Overlay />
 
           <motion.div
             ref={modalRef}
             className={cn(
-              "min-h-[50%] max-h-[90%] md:max-w-[40%] w-full bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl rounded relative z-50 flex flex-col flex-1 overflow-hidden",
+              "h-auto max-h-[100%] m-10 max-w-[400px] w-full bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl rounded relative z-50 flex flex-col flex-1 overflow-hidden",
               className
             )}
             initial={{
