@@ -1,6 +1,6 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism'; // Importing styles for both dark and light modes
-import { docco } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { solarizedlight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useState } from 'react';
 import { FiClipboard, FiCheck } from 'react-icons/fi'; // Icons for copy and copied status
 import { useTheme } from 'next-themes';
@@ -32,8 +32,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language }) => {
 
       <SyntaxHighlighter 
         language={language} 
-        style={theme==="dark" ? tomorrow : docco} // Conditional styling based on isDarkMode
+        style={theme==="dark" ? tomorrow : solarizedlight} // Conditional styling based on isDarkMode
         showLineNumbers
+        customStyle={theme === "dark" ? {} : { backgroundColor: "#e5e7eb" }}
       >
         {code}
       </SyntaxHighlighter>

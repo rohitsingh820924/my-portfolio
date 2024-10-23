@@ -125,6 +125,13 @@ const BlogModal: React.FC<BlogModalProps> = ({
     handleClose();
   };
 
+  const handleRemoveItem = (index: number) => {
+    setBlog((prevBlog) => ({
+      ...prevBlog,
+      items: prevBlog.items.filter((_, i) => i !== index),
+    }));
+  };
+
   return (
     <div className="flex items-center justify-center">
       <Modals
@@ -264,6 +271,13 @@ const BlogModal: React.FC<BlogModalProps> = ({
                       }}
                     />
                   </div>
+                  <button
+                    type="button"
+                    className="mt-2 bg-red-500 text-white px-3 py-1 rounded-md"
+                    onClick={() => handleRemoveItem(index)}
+                  >
+                    Remove Item
+                  </button>
                 </div>
               ))}
 

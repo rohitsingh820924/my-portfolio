@@ -92,8 +92,9 @@ const BlogModal: React.FC = () => {
     });
 
     dispatch(addBlog(formData as any));
+  };
 
-    // Reset blog state
+  const handleClear = () => {
     setBlog({
       title: "",
       bannerDescription: "",
@@ -101,8 +102,8 @@ const BlogModal: React.FC = () => {
       badge: [],
       items: [],
       isOnline: false,
-    });
-  };
+    })
+  }
 
   return (
     <div className="flex items-center justify-center">
@@ -258,6 +259,7 @@ const BlogModal: React.FC = () => {
               </button>
             </ModalContent>
             <ModalFooter className="gap-4">
+              <div onClick={handleClear} className="border-black text-center dark:text-white dark:border-white cursor-pointer text-black text-sm px-2 py-1 rounded-md border w-28">Clear</div>
               <button
                 type="submit"
                 className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28"

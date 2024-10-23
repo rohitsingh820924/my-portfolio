@@ -62,10 +62,10 @@ export function ProductPage({ blogPost }: ProductPageProps) {
                     className="rounded-lg mb-10 w-full h-auto object-cover"
                   />
                 )}
-                <div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert">
+                {item.description && (<div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert">
                   {item.description}
-                </div>
-                <CodeBlock code={item.code} language="javascript" />
+                </div>)}
+                {item.code && <CodeBlock code={item.code} language="javascript" />}
               </div>
             );
           })}
@@ -90,8 +90,8 @@ export function ProductPage({ blogPost }: ProductPageProps) {
           </div>
 
           <div className="flex justify-between">
-          <div className="flex gap-5">
-            <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-20"></div>
+            <div className="flex gap-5">
+              <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-20"></div>
               <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-20"></div>
             </div>
             <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-40"></div>

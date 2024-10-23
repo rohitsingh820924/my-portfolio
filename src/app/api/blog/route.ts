@@ -94,9 +94,9 @@ export async function PATCH(req: NextRequest) {
         const itemImage = formData.get(`items[${i}][image]`);
         const code = formData.get(`items[${i}][code]`)?.toString() || '';
 
-        if (!description || !code) {
-            return NextResponse.json({ message: `Item description and code are required for item ${i}.` }, { status: 400 });
-        }
+        // if (!description || !code) {
+        //     return NextResponse.json({ message: `Item description and code are required for item ${i}.` }, { status: 400 });
+        // }
 
         let itemImagePath = '';
 
@@ -204,9 +204,9 @@ export async function POST(req: NextRequest) {
         const itemImage = formData.get(`items[${i}][image]`); // File or null
         const code = formData.get(`items[${i}][code]`)?.toString() || '';
 
-        if (!description || !code) {
-            return NextResponse.json({ message: `Item description and code are required for item ${i}.` }, { status: 400 });
-        }
+        // if (!description || !code) {
+        //     return NextResponse.json({ message: `Item description and code are required for item ${i}.` }, { status: 400 });
+        // }
 
         let itemImagePath = '';
 
