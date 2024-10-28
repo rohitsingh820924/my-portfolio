@@ -12,7 +12,7 @@ interface ProductPageProps {
 
 export function ProductPage({ blogPost }: ProductPageProps) {
   return (
-    <TracingBeam className="px-6">
+    <TracingBeam className="px-6 mt-12">
       {blogPost ? (
         <div className="mx-auto antialiased pt-4 relative">
           <h1 className="md:text-4xl text-2xl font-bold text-black dark:text-white md:mb-10 mb-5">
