@@ -52,6 +52,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "react-toastify": "^10.0.5",
     "slugify": "^1.6.6",
+    "tailwind-clip-path": "^1.0.0",
     "tailwind-merge": "^2.5.2",
     "yup": "^1.4.0",
     "zod": "^3.23.8"

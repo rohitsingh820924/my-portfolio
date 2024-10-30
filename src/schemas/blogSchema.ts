@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import { Schema } from "mongoose";
 import { Blog } from "@/lib/types/blogType";
 
 const BlogItemSchema: Schema = new Schema({

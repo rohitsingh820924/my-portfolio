@@ -25,12 +25,13 @@ export function ThemeSwitcher({className} : classNameType) {
         theme === "dark" ? setTheme("light") : setTheme("dark");
       }}
     >
-      <svg
+      {/* <svg
         id="sunmoon"
         width="100%"
         height="100%"
         viewBox="0 0 200 200"
         preserveAspectRatio="xMidYMid meet"
+        className="hidden"
       >
         <defs>
           <mask id="hole">
@@ -59,7 +60,9 @@ export function ThemeSwitcher({className} : classNameType) {
             className="transition-all dark:fill-white fill-yellow-400"
           />
         </g>
-      </svg>
+      </svg> */}
+      <div className="rounded-full transition-all bg-yellow-400 dark:bg-white aspect-square w-full relative dark:clip-path-moon rotate-[-35deg]">
+      </div>
     </div>
   );
 }

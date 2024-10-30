@@ -84,6 +84,9 @@ export const StickyScroll = ({
               >
                 {item.title}
               </motion.h2>
+              <motion.div className="block lg:hidden mt-8 rounded-lg overflow-hidden aspect-video object-cover object-top">
+                {item.content}
+              </motion.div>
               <motion.p
                 initial={{
                   opacity: 0,
