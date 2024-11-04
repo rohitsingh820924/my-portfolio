@@ -161,7 +161,6 @@ export async function POST(req: NextRequest) {
     const bannerImage = formData.get('bannerImage');
     const isOnline: boolean = formData.get('isOnline') === 'true';
     const slug = slugify(title, { lower: true, strict: true });
-    console.log(isOnline);
 
     if (!(bannerImage instanceof File)) {
         return NextResponse.json({ message: 'Banner image is required' }, { status: 400 });
@@ -249,7 +248,6 @@ export async function POST(req: NextRequest) {
 
     try {
         await newBlog.save();
-        console.log(newBlog);
         return NextResponse.json({ message: 'Added new blog!', newBlog });
     } catch (error: any) {
         return NextResponse.json({ message: 'Error adding blog', error: error.message }, { status: 500 });

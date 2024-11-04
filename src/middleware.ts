@@ -6,7 +6,6 @@ export function middleware(request: NextRequest) {
     const isPublicPath = path === '/login'
 
     const token = request.cookies.get('token')?.value || ''
-    console.log(isPublicPath);
 
     if(isPublicPath && token) {
         return NextResponse.redirect(new URL('/dashboard', request.nextUrl))

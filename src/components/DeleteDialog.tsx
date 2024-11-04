@@ -37,11 +37,11 @@ const MyModalComponent: React.FC<MyModalComponentProps> = ({ id, open, onClose }
         <Dialog.Content className='bg-white dark:bg-neutral-950 md:max-w-[400px] max-w-[300px] mx-auto p-5 text-neutral-600 dark:text-neutral-100 border border-transparent dark:border-neutral-800 md:rounded-2xl rounded'>
           <Dialog.Title className='text-2xl text-center font-bold'>Are Sure!</Dialog.Title>
           <Dialog.Description className='text-center text-sm my-5'>
-          This inquiry will be deleted permanently. <span className='bg-neutral-700 p-1 text-xs rounded'>{id}</span>
+          This inquiry will be deleted permanently.
           </Dialog.Description>
           <div className='flex items-center justify-evenly'>
-            <button className='bg-red-500 text-sm px-5 py-2 rounded-lg' onClick={handleDelete}>Delete</button>
-            <button className='bg-white text-black font-semibold text-sm px-5 py-2 rounded-lg' onClick={onClose}>Close</button>
+            <button className='bg-red-500 text-sm text-white px-5 py-2 rounded-lg' onClick={handleDelete}>Delete</button>
+            <button className='dark:bg-white bg-black daek:text-black text-white font-semibold text-sm px-5 py-2 rounded-lg' onClick={onClose}>Close</button>
           </div>
         </Dialog.Content>
         </Dialog.Overlay>

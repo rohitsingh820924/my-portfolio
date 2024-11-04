@@ -2,14 +2,14 @@ import { Document } from "mongoose";
 
 export interface BlogItem {
     heading: string;
-    image: File | null;
+    image: File | null | string;
     code: string;
     description: string;  
 }
 
 export interface Blog extends Document {
     title: string;
-    bannerImage: File | null;
+    bannerImage: File | null |string;
     badge: string[];
     createdAt: Date;
     slug: string;

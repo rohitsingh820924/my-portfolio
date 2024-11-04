@@ -37,11 +37,8 @@ export default function Cards() {
     useEffect(() => {
         getInquiry();
     },[count])
-    useEffect(() => {
-        console.warn(inquiries);
-    },[inquiries])
   return (
-    <div className="bg-black min-h-svh">
+    <div className="">
       <div className="max-w-5xl mx-auto px-8">
         <HoverEffect items={inquiries} />
       </div>

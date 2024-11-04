@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../components/ui/navbar-menu";
 import {
   Modal,
@@ -45,7 +45,6 @@ export default function Navbar({ className }: { className?: string }) {
   
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      console.warn(formData);
       
      if(formData.email) {
       try {
@@ -88,11 +87,6 @@ export default function Navbar({ className }: { className?: string }) {
       });
      }
     };
-
-    useEffect(() => {
-      console.warn(process.env.NEXT_MONGODB_URI);
-      
-    },[])
     return (
       <div
         className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}

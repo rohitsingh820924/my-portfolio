@@ -82,7 +82,7 @@ export default function DataTable() {
     },
   ];
 
-  const paginationModel = { page: 0, pageSize: 5 };
+  const paginationModel = { page: 0, pageSize: 20 };
 
   if (status === 'loading') {
     return <div className="flex justify-center items-center h-full"><CircularProgress /></div>;
@@ -96,7 +96,7 @@ export default function DataTable() {
     <>
     <Paper sx={{ height: 'auto', width: '100%' }}>
       <Toolbar sx={{ justifyContent: 'space-between', mb: 2 }}>
-        <Typography variant="h6" component="div">
+        <Typography variant="h6" component="div" className='font-bold'>
           All Blogs
         </Typography>
         <BlogModal />

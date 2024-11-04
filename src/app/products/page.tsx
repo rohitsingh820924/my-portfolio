@@ -4,13 +4,13 @@ import { Blog } from '@/lib/types/blogType';
 import React from 'react'
 
 const baseUrl = process.env.NEXT_BASE_URL;
-async function fetchBlogPostMetadata(): Promise<Blog> {
+async function fetchBlogPost(): Promise<Blog> {
   const data = await apiGet(`${baseUrl}/api/blog`);
   return data.blogs;
 }
 
 export default async function page () {
-  const blogs = await fetchBlogPostMetadata();
+  const blogs = await fetchBlogPost();
   return (
     <>
       <ProductGrid blogs={blogs} />

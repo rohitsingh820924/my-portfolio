@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import Image from 'next/image'
 import { format } from 'date-fns';
+import Link from "next/link";
 
 export const BentoGrid = ({
   className,
@@ -39,7 +40,7 @@ export const BentoGridItem = ({
   date?:any;
 }) => {
   return (
-    <a href={`/products/${slug}`}
+    <Link href={`/products/${slug}`}
       className={cn(
         "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-3 dark:bg-neutral-950 dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
         className
@@ -60,7 +61,7 @@ export const BentoGridItem = ({
               {icon?.map((item, i) => (
                 <span
                   key={i}
-                  className="bg-black text-white rounded-full text-xs w-fit px-3 py-0.5"
+                  className="bg-black text-white rounded-full capitalize text-xs w-fit px-3 py-0.5"
                 >
                   {item}
                 </span>
@@ -74,6 +75,6 @@ export const BentoGridItem = ({
           {description}
         </div>
       </div>
-    </a>
+    </Link>
   );
 };

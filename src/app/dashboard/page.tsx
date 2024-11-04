@@ -18,8 +18,8 @@ const Page = () => { // Change 'page' to 'Page'
     <div className="dark:bg-black bg-white min-h-screen pt-32"> {/* Changed 'min-h-svh' to 'min-h-screen' */}
       <div className='max-w-7xl mx-auto'>
         <ThemeProvider theme={newTheme}>
-          {/* <Cards /> */}
           <BlogTable />
+          <Cards />
         </ThemeProvider>
       </div>
     </div>

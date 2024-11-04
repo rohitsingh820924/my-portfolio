@@ -74,9 +74,6 @@ const BlogModal: React.FC<BlogModalProps> = ({
     }
   }, [initialBlog]);
 
-  console.log(blog);
-  console.log(initialBlog);
-
   const handleAddItem = () => {
     setBlog((prevBlog) => ({
       ...prevBlog,

@@ -12,7 +12,7 @@ interface ProductPageProps {
 
 export function ProductPage({ blogPost }: ProductPageProps) {
   return (
-    <TracingBeam className="px-6 mt-12">
+    <TracingBeam className="px-6 mt-12 md:mt-5">
       {blogPost ? (
         <div className="mx-auto antialiased pt-4 relative">
           <h1 className="md:text-4xl text-2xl font-bold text-black dark:text-white md:mb-10 mb-5">
@@ -32,7 +32,7 @@ export function ProductPage({ blogPost }: ProductPageProps) {
               {blogPost.badge?.map((item, i) => (
                 <span
                   key={i}
-                  className="bg-black text-white rounded-full text-sm w-fit px-4 py-1"
+                  className="bg-black text-white capitalize rounded-full text-sm w-fit px-4 py-1"
                 >
                   {item}
                 </span>

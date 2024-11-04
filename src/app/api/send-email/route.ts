@@ -48,9 +48,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
     countryCode 
   })
   
-
-  console.log(mailOptions);
-  
   
   try {
     // Send mail
