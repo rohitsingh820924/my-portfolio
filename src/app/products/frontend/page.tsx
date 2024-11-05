@@ -15,7 +15,7 @@ async function fetchBlogPost(): Promise<Blog[]> {
 export default async function page () {
   const blogs = await fetchBlogPost();
   return (
-    <div className='max-w-4xl mx-auto py-5'>
+    <div className='max-w-4xl mx-auto py-5 md:mt-8'>
       <h1 className='text-3xl text-neutral-950 dark:text-neutral-50 font-bold mb-5'>Frontend Development</h1>
         <CompareBox />
 

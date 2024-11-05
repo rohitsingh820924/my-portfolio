@@ -122,12 +122,12 @@ export const MobileSidebar = ({
   return (
     <div
       className={cn(
-        "h-12 px-4 z-10 flex flex-row md:hidden items-center justify-between bg-neutral-100 dark:bg-neutral-800 w-full fixed top-0 shadow-md",
+        "h-12 px-4 z-50 flex flex-row md:hidden items-center justify-between bg-neutral-100 dark:bg-neutral-800 w-full fixed top-0 shadow-md",
         className
       )}
       {...props}
     >
-      <div className="flex justify-between z-20 w-full items-center">
+      <div className="flex justify-between w-full items-center">
       <Link href={"/"} className="bg-black dark:bg-white px-3 py-1.5 flex gap-2 dark:text-neutral-800 text-neutral-200 font-medium text-xs rounded-full"><BiHomeAlt2 className="text-sm"/>About Me</Link>
         <div className="flex justify-between align-middle gap-3">
         <ThemeSwitcher className="h-6" />
