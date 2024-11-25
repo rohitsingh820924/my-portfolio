@@ -31,12 +31,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     subject: 'New Email Submission', // Subject line
     text: `User submitted: ${email}`, // plain text body
     html: `
-      <div style="border: 1px solid #f2f2f2; background-color: #eeeeee; max-width: 400px"; margin-auto;">
-      <h1 style="background-color: #45a945; padding: 20px; text-align: center; margin-bottom: 20px; margin-top: 0px; font-size: 32px; color: #ffffff;">New Email Submission</h1>
-      <p style="margin-bottom: 10px;">Hi Rohit, ${firstName} ${lastName} has Submmited an Email.</p>
-      <p style="margin-bottom: 10px;">Email: <strong>${email}</strong></p>
-      <p>Phone No: <strong>+${countryCode} ${phone}</strong></p>
-      <div>
+      <div style="background-color:#f2f2f2;display:flex;align-items:center;justify-content:center;height:100%;width:100%;align-items:center;justify-content:center;padding:20px;font-family:system-ui"><div style="border:1px solid #f2f2f2;background-color:#fff;max-width:400px;width:100%;"><h1 style="background-color:#35b7e7;padding:20px;text-align:center;margin-block:0;font-size:32px;color:#fff">New Email Submission</h1><div style="padding:20px"><p style="margin-bottom:30px;margin-top:0;text-align:center;font-size:20px;font-weight:500">Hi Rohit,<span style="color:#35b7e7!important;"> ${firstName} ${lastName} </span>has Submmited an Email.</p><p style="margin-bottom:10px">Email:<strong style="color:#35b7e7"> ${email}</strong></p><p style="margin-bottom:0">Phone No:<strong style="color:#35b7e7"> ${countryCode} ${phone}</strong></p></div><div></div>
     `, // HTML body
   };
 

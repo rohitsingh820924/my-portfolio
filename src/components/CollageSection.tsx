@@ -9,11 +9,11 @@ export default function CollageSection() {
           <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
           <div className="relative shadow-xl border border-transparent dark:bg-black dark:border-white/[0.2] bg-white  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
 
-            <h1 className="font-bold text-xl dark:text-white text-black mb-4 relative z-50">
+            <h1 className="font-bold text-xl dark:text-white text-black mb-4 relative z-10">
             Bachelor of Computer Applications (BCA)
             </h1>
 
-            <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
+            <p className="font-normal text-base text-slate-500 mb-4 relative z-10">
             Maharishi Arvind Institute of Science & Management
             </p>
 
@@ -37,11 +37,11 @@ export default function CollageSection() {
           <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
           <div className="relative shadow-xl border border-transparent dark:bg-black dark:border-white/[0.2] bg-white  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
 
-            <h1 className="font-bold text-xl dark:text-white text-black mb-4 relative z-50">
+            <h1 className="font-bold text-xl dark:text-white text-black mb-4 relative z-10">
             Master of Computer Applications (MCA)
             </h1>
 
-            <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
+            <p className="font-normal text-base text-slate-500 mb-4 relative z-10">
             Regional College For Education Research and Technology
             </p>
 

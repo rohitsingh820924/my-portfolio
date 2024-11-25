@@ -22,6 +22,7 @@ const nextConfig = {
         NEXT_CLOUDINARY_CLOUD_NAME: process.env.NEXT_CLOUDINARY_CLOUD_NAME,
         NEXT_CLOUDINARY_API_KEY: process.env.NEXT_CLOUDINARY_API_KEY,
         NEXT_CLOUDINARY_API_SECRET: process.env.NEXT_CLOUDINARY_API_SECRET,
+        NEXT_NEXT_NODE_ENV: process.env.NEXT_NEXT_NODE_ENV,
       }
 };
 

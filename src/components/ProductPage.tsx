@@ -12,9 +12,9 @@ interface ProductPageProps {
 
 export function ProductPage({ blogPost }: ProductPageProps) {
   return (
-    <TracingBeam className="px-6 mt-12 md:mt-5">
+    <TracingBeam className="px-6 mt-12 md:mt-0">
       {blogPost ? (
-        <div className="mx-auto antialiased pt-4 relative">
+        <div className="mx-auto max-w-4xl antialiased py-4 relative">
           <h1 className="md:text-4xl text-2xl font-bold text-black dark:text-white md:mb-10 mb-5">
             {blogPost.title}
           </h1>
@@ -44,8 +44,7 @@ export function ProductPage({ blogPost }: ProductPageProps) {
               </span>
           
           </div>
-          <div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert">
-            {blogPost.bannerDescription}
+          <div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert" dangerouslySetInnerHTML={{ __html: blogPost.bannerDescription }}>
           </div>
           {blogPost?.items?.map((item, i) => {
             return (
@@ -62,8 +61,7 @@ export function ProductPage({ blogPost }: ProductPageProps) {
                     className="rounded-lg mb-10 w-full h-auto object-cover"
                   />
                 )}
-                {item.description && (<div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert">
-                  {item.description}
+                {item.description && (<div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert" dangerouslySetInnerHTML={{ __html: item.description }}>
                 </div>)}
                 {item.code && <CodeBlock code={item.code} language="javascript" />}
               </div>
