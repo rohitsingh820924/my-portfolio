@@ -1,20 +1,12 @@
 import React from 'react'
 import Login from '@/components/Login'
-import { apiGet } from '@/lib/api'
+import { getOtp } from '@/lib/getOtp'
 
-const baseUrl = process.env.NEXT_BASE_URL;
-
-async function getOtp(): Promise<void> {
-  await apiGet(`${baseUrl}/api/send-otp`);
-}
-
-const Page: React.FC = async () => {
+export default async function page() {
   await getOtp();
   return (
-    <div className='flex min-h-svh items-center justify-center dark:bg-black bg-white antialiased'>
+    <div className='flex min-h-svh items-center justify-center dark:bg-black bg-white antialiased '>
         <Login />
     </div>
   )
 }
-
-export default Page;
