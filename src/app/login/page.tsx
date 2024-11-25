@@ -1,12 +1,27 @@
-import React from 'react'
-import Login from '@/components/Login'
-import { getOtp } from '@/lib/getOtp'
+'use client'; // Marks this file as a client-side component
 
-export default async function page() {
-  await getOtp();
+import React, { useEffect } from 'react'
+import Login from '@/components/Login'
+import { apiGet } from '@/lib/api'
+
+const baseUrl = process.env.NEXT_BASE_URL;
+
+export default function Page() {
+  useEffect(() => {
+    async function getOtp() {
+      try {
+        await apiGet(`${baseUrl}/api/send-otp`);
+      } catch (error) {
+        console.error("Error sending OTP:", error);
+      }
+    }
+
+    getOtp();
+  }, []);
+
   return (
     <div className='flex min-h-svh items-center justify-center dark:bg-black bg-white antialiased '>
-        <Login />
+      <Login />
     </div>
   )
 }
