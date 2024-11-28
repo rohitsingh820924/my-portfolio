@@ -139,7 +139,7 @@ const content = [
         />
       </div>
     ),
-    url: "https://urlsdemo.online/flikka/",
+    url: "https://flikka.com/",
   },
   {
     title: "AR Academy",
