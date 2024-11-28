@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/moving-border";
 
 export default function DownloadBtn() {
     const openPdf = () => {
-        window.open('/Resume-rohitsingh-frontend-3years.pdf', '_blank');
+        window.open('/Rohit_Singh_UI-Developer_Resume_3-Years.pdf', '_blank');
       };
   return (
     <div className="text-center mt-10">

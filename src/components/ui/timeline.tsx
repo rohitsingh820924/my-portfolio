@@ -39,10 +39,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-          My journey as Frontend Developer
+          My journey as UI Developer
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base">
-          I&apos;ve been working as Frontend Developer for the past 2 years. <br /> Here&apos;s
+          I&apos;ve been working as UI Developer for the past 3 years. <br /> Here&apos;s
           a timeline of my journey.
         </p>
       </div>
