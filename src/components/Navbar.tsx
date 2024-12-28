@@ -96,7 +96,7 @@ export default function Navbar({ className }: { className?: string }) {
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/web-dev">Frontend Development</HoveredLink>
               <HoveredLink href="/interface-design">Web Design</HoveredLink>
-              <HoveredLink href="/seo">Figma Design</HoveredLink>
+              <HoveredLink href="/products/ui-ux">Figma Design</HoveredLink>
               <HoveredLink href="/branding">Graphic Design</HoveredLink>
               <HoveredLink href="/branding">Video Editing</HoveredLink>
             </div>
@@ -118,7 +118,7 @@ export default function Navbar({ className }: { className?: string }) {
               />
               <ProductItem
                 title="UI/UX"
-                href="uix"
+                href="/products/ui-ux"
                 src="/images/services/ui-ux.png"
                 description="Designing user-friendly, visually appealing digital experiences."
               />
