@@ -20,8 +20,8 @@ const BlogItem: React.FC<BlogItemProps> = ({ blogContent }) => {
           />
         }
       >
-        <div className="relative overflow-hidden grid md:grid-cols-2 h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
-          <div className="w-full bg-white rounded-tr-lg rounded-tl-lg overflow-hidden aspect-video relative">
+        <div className="relative overflow-hidden grid md:grid-cols-2 h-full rounded-2xl transition duration-200 group bg-white dark:bg-neutral-900 hover:shadow-xl border border-zinc-100 dark:border-neutral-900">
+          <div className="w-full bg-white dark:bg-neutral-900 rounded-tr-lg rounded-tl-lg overflow-hidden aspect-video relative">
             <Image
               src={blogContent.bannerImage as string}
               alt="thumbnail"
@@ -31,15 +31,15 @@ const BlogItem: React.FC<BlogItemProps> = ({ blogContent }) => {
             />
           </div>
           <div className=" p-4">
-            <h2 className="font-bold my-4 text-lg text-zinc-700 line-clamp-2">
+            <h2 className="font-bold my-4 text-lg text-zinc-700 dark:text-zinc-100 line-clamp-2">
               {blogContent.title}
             </h2>
-            <h2 className="font-normal my-4 text-sm text-zinc-500 line-clamp-3">
+            <h2 className="font-normal my-4 text-sm text-zinc-500 dark:text-zinc-300 line-clamp-3">
               {blogContent.bannerDescription}
             </h2>
             <div className="flex flex-row justify-between items-center mt-10">
-              <span className="text-sm text-gray-500">{format(new Date(blogContent.createdAt), 'dd MMMM yyyy')}</span>
-              <Link href={`/products/${blogContent.slug}`} className="relative z-10 px-6 cursor-none py-2 bg-black text-white font-bold rounded-xl block text-xs">
+              <span className="text-sm text-gray-500 dark:text-zinc-300">{format(new Date(blogContent.createdAt), 'dd MMMM yyyy')}</span>
+              <Link href={`/products/${blogContent.slug}`} className="relative z-10 px-6 cursor-none py-2 bg-black text-white dark:text-black dark:bg-white font-bold rounded block text-xs">
                 Read More
               </Link>
             </div>

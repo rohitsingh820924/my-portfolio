@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { TracingBeam } from "@/components/ui/tracing-beam";
-import CodeBlock from "./CodeBlock";
+import { CodeBlock } from "@/components/ui/code-block";
 import { Blog } from "@/lib/types/blogType";
 import { format } from 'date-fns';
 
@@ -63,7 +63,13 @@ export function ProductPage({ blogPost }: ProductPageProps) {
                 )}
                 {item.description && (<div className="text-sm text-neutral-950 dark:text-neutral-100 prose prose-sm dark:prose-invert" dangerouslySetInnerHTML={{ __html: item.description }}>
                 </div>)}
-                {item.code && <CodeBlock code={item.code} language="javascript" />}
+                {item.code && (
+              <CodeBlock
+              language="jsx"
+              filename="Code"
+              highlightLines={[]}
+              code={item.code}
+            />)}
               </div>
             );
           })}
