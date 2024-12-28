@@ -52,7 +52,7 @@ export const Tabs = ({
             }}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
-            className={cn("relative px-4 py-2 border border-gray-200 dark:border-neutral-950 rounded-full", tabClassName)}
+            className={cn("relative whitespace-nowrap px-4 py-2 border border-gray-200 dark:border-neutral-950 rounded-full", tabClassName)}
             style={{
               transformStyle: "preserve-3d",
             }}
@@ -116,7 +116,9 @@ export const FadeInDiv = ({
           }}
           className={cn("w-full h-full absolute top-0 left-0", className)}
         >
-          {tab.content}
+        <div className="w-full overflow-hidden border relative h-full rounded-2xl p-5 text-xl md:text-4xl font-bold text-white dark:bg-neutral-900 bg-neutral-100  border-neutral-200 dark:border-neutral-800">
+          {isActive(tab) && tab.content}
+        </div>
         </motion.div>
       ))}
     </div>

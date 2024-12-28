@@ -1,6 +1,6 @@
 export default function Loading() {
       return (
-        <div className="my-12 mx-auto max-w-4xl">
+        <div className="px-4 mt-12 md:mt-8 mx-auto max-w-4xl">
         <div>
           <div className="h-10 bg-gray-200 rounded-xl dark:bg-gray-700 w-full mb-3"></div>
         </div>
