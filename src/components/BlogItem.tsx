@@ -21,7 +21,7 @@ const BlogItem: React.FC<BlogItemProps> = ({ blogContent }) => {
         }
       >
         <div className="relative overflow-hidden grid md:grid-cols-2 h-full rounded-2xl transition duration-200 group bg-white dark:bg-neutral-900 hover:shadow-xl border border-zinc-100 dark:border-neutral-900">
-          <div className="w-full bg-white dark:bg-neutral-900 rounded-tr-lg rounded-tl-lg overflow-hidden aspect-video relative">
+          <div className="w-full h-full bg-white dark:bg-neutral-900 rounded-tr-lg rounded-tl-lg overflow-hidden aspect-video relative">
             <Image
               src={blogContent.bannerImage as string}
               alt="thumbnail"

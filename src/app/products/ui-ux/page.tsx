@@ -56,9 +56,7 @@ export default async function page () {
         title: "MyGuru",
         value: "myguru",
         content: (
-          <div className="w-full overflow-hidden relative h-full rounded-2xl p-5 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-yellow-500 to-yellow-900">
-            <iframe className="w-full h-full rounded-xl" width="800" height="450" src="https://embed.figma.com/design/PwNNowyw5ph3Qyu3NSEVB6/MyGuruApp_v1?node-id=0-1&embed-host=share"></iframe>
-          </div>
+        <iframe className="w-full h-full rounded-xl" width="800" height="450" src="https://embed.figma.com/design/PwNNowyw5ph3Qyu3NSEVB6/MyGuruApp_v1?node-id=0-1&embed-host=share"></iframe>
         ),
       },
   ];
