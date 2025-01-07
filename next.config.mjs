@@ -24,6 +24,8 @@ const nextConfig = {
         NEXT_CLOUDINARY_API_KEY: process.env.NEXT_CLOUDINARY_API_KEY,
         NEXT_CLOUDINARY_API_SECRET: process.env.NEXT_CLOUDINARY_API_SECRET,
         NEXT_NEXT_NODE_ENV: process.env.NEXT_NEXT_NODE_ENV,
+        NEXT_TELEGRAM_BOT_TOKEN: process.env.NEXT_TELEGRAM_BOT_TOKEN,
+        NEXT_TELEGRAM_CHAT_ID: process.env.NEXT_TELEGRAM_CHAT_ID,
       }
 };
 
