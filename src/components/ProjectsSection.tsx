@@ -158,6 +158,40 @@ const content = [
     ),
     url: "https://www.aracademyras.com/",
   },
+  {
+    title: "BubuPod",
+    description:
+      "Experience effortless, time-saving bottle care with Bubupod - designed to wash, sterilize, dry and store your baby bottles, pump parts, pacifiers, and teethers, giving your little one the safest, cleanest, feeding essentials.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        <Image
+          src="/images/projects/bubupod.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover object-top"
+          alt="bubupod"
+        />
+      </div>
+    ),
+    url: "https://bubupod.com/",
+  },
+  {
+    title: "Habot",
+    description:
+      "Habot connects job seekers with top opportunities across the UAE. Discover full-time, part-time, and freelance roles with ease, all in one place.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        <Image
+          src="/images/projects/habot.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover object-top"
+          alt="habot"
+        />
+      </div>
+    ),
+    url: "https://habot-ten.vercel.app/",
+  },
 ];
 export function ProjectSection() {
   const [isPinned, setIsPinned] = useState(false);
