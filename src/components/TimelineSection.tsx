@@ -106,7 +106,7 @@ export default function TimelineSection() {
         <div>
           <h3 className="dark:text-white text-black text-3xl font-bold mb-5"><a href="https://www.rohitsingh.cloud/">Design2Dev - Freelance Developer</a></h3>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            As a freelance developer with expertise in React.js, Next.js, Node.js, and WordPress, I focus on building high-performance, server-rendered applications, creating responsive designs, and enhancing SEO. I collaborate with clients to deliver custom solutions that meet their needs, whether it's a dynamic React application or a flexible WordPress site.
+          As a freelance developer with expertise in React.js, Next.js, Node.js, and WordPress, I focus on building high-performance, server-rendered applications, creating responsive designs, and enhancing SEO. I collaborate with clients to deliver custom solutions that meet their needs, whether it's a dynamic React application or a flexible WordPress site.
           </p>
 
           <div className="grid grid-cols-2 gap-4">
