@@ -25,7 +25,7 @@ export default function Home() {
         device: isMobile ? 'Mobile' : 'Desktop',
       };
 
-      const data = await apiGet(`http://api.ipstack.com/${visitorData.ip}?access_key=${visitorData.page === "http://localhost:3000/" ? "" : ipkey}`);
+      const data = await apiGet(`https://api.ipstack.com/${visitorData.ip}?access_key=${visitorData.page === "http://localhost:3000/" ? "" : ipkey}`);
       
       
 
