@@ -4,12 +4,12 @@ import { sendTelegramNotification } from '@/lib/telegram';
 
 export async function POST(req: NextRequest, res: NextResponse) {
   await dbConnect()
-  const reqBody = await req.json()
+  const {visitorData, data} = await req.json()
   
   
   try {
-    await sendTelegramNotification(reqBody);
-      return NextResponse.json({ message: 'Message sent successfully!', reqBody});
+    await sendTelegramNotification(visitorData, data);
+      return NextResponse.json({ message: 'Message sent successfully!', visitorData, data});
     } catch (error) {
       console.error(error);
       return NextResponse.json({ message: 'Error sending message' });

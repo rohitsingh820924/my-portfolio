@@ -2,15 +2,17 @@
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectSection } from "@/components/ProjectsSection";
 import { SkillsSection } from "@/components/SkillsSections";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import TimelineSection from '@/components/TimelineSection'
 import FormSection from "@/components/FormSection";
 import CollageSection from "@/components/CollageSection";
+import { apiGet } from "@/lib/api";
 
 export default function Home() {
   useEffect(() => {
     const trackVisitor = async () => {
       const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+      const ipkey = await process.env.NEXT_IPSTACK_KEY;
       const visitorData = {
         ip: await fetch('https://api.ipify.org?format=json')
           .then(res => res.json())
@@ -23,10 +25,14 @@ export default function Home() {
         device: isMobile ? 'Mobile' : 'Desktop',
       };
 
+      const data = await apiGet(`http://api.ipstack.com/${visitorData.ip}?access_key=${visitorData.page === "http://localhost:3000/" ? "" : ipkey}`);
+      
+      
+
       await fetch('/api/tracks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(visitorData),
+        body: JSON.stringify({visitorData, data}),
       });
     };
 

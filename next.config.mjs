@@ -26,6 +26,7 @@ const nextConfig = {
         NEXT_NEXT_NODE_ENV: process.env.NEXT_NEXT_NODE_ENV,
         NEXT_TELEGRAM_BOT_TOKEN: process.env.NEXT_TELEGRAM_BOT_TOKEN,
         NEXT_TELEGRAM_CHAT_ID: process.env.NEXT_TELEGRAM_CHAT_ID,
+        NEXT_IPSTACK_KEY: process.env.NEXT_IPSTACK_KEY,
       }
 };
 

@@ -1,4 +1,4 @@
-export async function sendTelegramNotification(visitorData: any) {
+export async function sendTelegramNotification(visitorData: any, data:any) {
     const botToken = process.env.NEXT_TELEGRAM_BOT_TOKEN;
     const chatId = process.env.NEXT_TELEGRAM_CHAT_ID;
   
@@ -9,6 +9,14 @@ export async function sendTelegramNotification(visitorData: any) {
   - Page: ${visitorData.page}
   - Device: ${visitorData.device}
   - Referrer: ${visitorData.referrer || 'Direct'}
+  ${data ? (
+  `- Country :${data.country_name}
+  - Region :${data.region_name}
+  - City : ${data.city}
+  - Zip : ${data.zip}
+  - Location : https://maps.google.com/?q=${data.latitude},${75.77780151367188}
+  `
+  ) : ''}
   `;
   
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
