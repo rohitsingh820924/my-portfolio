@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Header from "@/components/Header";
 import { ReduxProvider } from "./redux-provider";
 import { ThemeProvider } from 'next-themes';
 
@@ -41,7 +40,6 @@ export default function RootLayout({
       <body className={`${inter.className}`} suppressHydrationWarning={true}>
         <ThemeProvider attribute="class">
           <ReduxProvider>
-            <Header />
             {children}
           </ReduxProvider>
         </ThemeProvider>

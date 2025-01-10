@@ -1,6 +1,9 @@
 export async function sendTelegramNotification(visitorData: any, data:any) {
     const botToken = process.env.NEXT_TELEGRAM_BOT_TOKEN;
     const chatId = process.env.NEXT_TELEGRAM_CHAT_ID;
+
+    console.log(data);
+    
   
     const message = `
   🔔 New Visitor Notification:
@@ -9,14 +12,14 @@ export async function sendTelegramNotification(visitorData: any, data:any) {
   - Page: ${visitorData.page}
   - Device: ${visitorData.device}
   - Referrer: ${visitorData.referrer || 'Direct'}
-  ${data ? (
+  ${data.country_name && (
   `- Country :${data.country_name}
   - Region :${data.region_name}
   - City : ${data.city}
   - Zip : ${data.zip}
-  - Location : https://maps.google.com/?q=${data.latitude},${75.77780151367188}
+  - Location : https://maps.google.com/?q=${data.latitude},${data.longitude}
   `
-  ) : ''}
+  )}
   `;
   
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
@@ -37,5 +40,7 @@ export async function sendTelegramNotification(visitorData: any, data:any) {
     } catch (error) {
       console.error('Failed to send Telegram message:', error);
     }
+
+    return payload;
   }
   

@@ -62,7 +62,7 @@ export default async function page () {
   ];
 
   return (
-    <div className='max-w-4xl mx-auto pb-5 px-4 mt-12 md:mt-8'>
+    <div className='max-w-4xl mx-auto pb-5 px-4 mt-14 md:mt-8'>
       <h1 className='md:text-3xl text-2xl text-neutral-950 dark:text-neutral-50 font-bold mb-5'>UI/UX Design | Crafting Seamless Digital Experiences</h1>
         <CompareBox />
 

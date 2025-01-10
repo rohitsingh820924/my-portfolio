@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
     images: {
-        domains: ['assets.aceternity.com', 'images.unsplash.com', 'api.microlink.io'],
+        domains: ['assets.aceternity.com', 'images.unsplash.com', 'api.microlink.io',"aceternity.com"],
         remotePatterns: [
           {
             protocol: 'https',

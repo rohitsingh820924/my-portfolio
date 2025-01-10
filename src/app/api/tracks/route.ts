@@ -8,8 +8,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
   
   
   try {
-    await sendTelegramNotification(visitorData, data);
-      return NextResponse.json({ message: 'Message sent successfully!', visitorData, data});
+    const payload = await sendTelegramNotification(visitorData, data);
+      return NextResponse.json({ message: 'Message sent successfully!', payload});
     } catch (error) {
       console.error(error);
       return NextResponse.json({ message: 'Error sending message' });
