@@ -24,7 +24,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   )
 }
 
-export const products = [
+const products = [
   {
     title: "SportsWiz",
     link: "https://sportswiz.live",
