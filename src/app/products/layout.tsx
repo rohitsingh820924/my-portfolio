@@ -2,13 +2,14 @@
 import Sidemenu from "@/components/Sidemenu"
 import { cn } from "@/lib/utils"
 import { useSelector } from 'react-redux';
+import { RootState } from "@/lib/store/store";
 
 export default function DashboardLayout({
     children,
   }: {
     children: React.ReactNode
   }) {
-    const openMenu = useSelector((state:any) => state.openMenu.value)
+  const openMenu = useSelector((state:RootState) => state.openMenu.isMenuOpen)
     return (
         <div className="bg-gray-100 dark:bg-neutral-800 min-h-svh">
             <div className={cn(

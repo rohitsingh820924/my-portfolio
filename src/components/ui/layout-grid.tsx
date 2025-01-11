@@ -2,6 +2,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, AppDispatch } from "@/lib/store/store";
+import { setIsMobile } from "@/lib/store/slices/sidemenuSlice";
 
 type Card = {
   id: number;
@@ -14,7 +17,8 @@ type Card = {
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   const [selected, setSelected] = useState<Card | null>(null);
   const [lastSelected, setLastSelected] = useState<Card | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
+  const isMobile = useSelector((state:RootState) => state.openMenu.isMobile);
 
   const handleClick = (card: Card) => {
     if(!isMobile)
@@ -30,7 +34,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 767);
+        dispatch(setIsMobile(window.innerWidth <= 767));
     };
 
     checkMobile(); 

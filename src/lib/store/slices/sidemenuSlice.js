@@ -1,20 +1,22 @@
-// slices/userSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
-  value: false,
+  isMenuOpen: false,
+  isMobile: false,
 };
 
 const sidemenuSlice = createSlice({
-  name: "openMenu",
+  name: "sidemenu",
   initialState,
   reducers: {
     setOpenMenu: (state, action) => {
-      state.value = action.payload;
+      state.isMenuOpen = action.payload;
+    },
+    setIsMobile: (state, action) => {
+      state.isMobile = action.payload;
     },
   },
 });
 
-export const { setOpenMenu } = sidemenuSlice.actions;
+export const { setOpenMenu, setIsMobile } = sidemenuSlice.actions;
 export default sidemenuSlice.reducer;

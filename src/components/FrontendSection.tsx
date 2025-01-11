@@ -302,7 +302,6 @@ export const SkeletonFour = () => {
     <div className="h-60 md:h-60  flex flex-col items-center relative bg-transparent dark:bg-transparent mt-10">
         <Link
       href="/contact"
-      target="__blank"
       className="bg-black relative z-10 dark:bg-white font-medium text-sm rounded py-2 w-24 text-center text-white dark:text-black self-start"
     >Contact</Link>
      <Globe className="absolute -right-10 md:-right-10 -bottom-80 md:-bottom-72" />

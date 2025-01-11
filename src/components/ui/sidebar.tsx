@@ -6,7 +6,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX, IconArrowLeft } from "@tabler/icons-react";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { ThemeSwitcher } from "../ThemeSwitcher";
-
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store/store";
 interface Links {
   label: string;
   href: string;
@@ -169,12 +170,15 @@ export const MobileSidebar = ({
 export const SidebarLink = ({
   link,
   className,
+  setOpen,
   ...props
 }: {
   link: Links;
   className?: string;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   props?: Omit<LinkProps, "href">;
 }) => {
+  const isMobile = useSelector((state:RootState) => state.openMenu.isMobile);
   const { open, animate } = useSidebar();
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -188,6 +192,7 @@ export const SidebarLink = ({
         "flex items-center justify-start gap-2 group/sidebar py-2",
         className
       )}
+      onClick={() => isMobile ? setOpen(false) : ''}
       {...props}
     >
       {link.icon}

@@ -10,6 +10,7 @@ import Link from "next/link";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { setOpenMenu } from "@/lib/store/slices/sidemenuSlice";
 import { BiHomeAlt2 } from "react-icons/bi";
+import { RootState, AppDispatch } from "@/lib/store/store";
 
 export default function Sidemenu() {
   const links = [
@@ -43,8 +44,8 @@ export default function Sidemenu() {
     },
   ];
 
-  const openMenu = useSelector((state:any) => state.openMenu.value)
-  const dispatch = useDispatch()
+  const openMenu = useSelector((state:RootState) => state.openMenu.isMenuOpen)
+  const dispatch = useDispatch<AppDispatch>()
   const [open, setOpen] = useState(false);
 
   useEffect(()=> {
@@ -57,7 +58,7 @@ export default function Sidemenu() {
           <div className="fixed mt-8 z-10 h-[calc(100svh-32px)] pb-10 flex flex-col flex-1 justify-between overflow-y-auto overflow-x-hidden">
             <div className="z-9 flex flex-col gap-2">
             <div>
-            <Link href={"/"}>
+            <Link href={"/"} className="block mb-5">
             <svg width="100" height="30" className={`h-auto transition-all ${open ? 'md:w-[100px]' : 'md:w-[25px]'}`} viewBox="0 0 184 63" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_322_2)">
               <path d="M103.44 19.13H84.44C84.0034 19.0971 83.5647 19.1542 83.151 19.2977C82.7373 19.4412 82.3575 19.6681 82.035 19.9643C81.7126 20.2605 81.4544 20.6198 81.2763 21.0198C81.0983 21.4198 81.0042 21.8521 81 22.29H77.12L80.41 10.83C80.41 10.64 80.51 10.46 80.55 10.28C80.918 8.97841 80.9796 7.60932 80.73 6.27997C80.4758 5.01543 79.8771 3.84573 79 2.89997C78.0563 1.92005 76.8899 1.18248 75.6 0.74997C74.1209 0.238494 72.565 -0.0151926 71 -2.97638e-05H9.9L14.38 12.05L0 62.29H53.14C54.8341 62.2821 56.5181 62.0294 58.14 61.54C59.7801 61.0618 61.338 60.3368 62.76 59.39C63.3357 59.0098 63.8807 58.5852 64.39 58.12C65.7619 56.931 66.8953 55.4921 67.73 53.88C68.139 53.1067 68.4738 52.2964 68.73 51.46L74.92 29.94C77.4866 28.4299 80.4348 27.6937 83.41 27.82H102.41C102.856 27.8657 103.306 27.8185 103.733 27.6813C104.159 27.5441 104.553 27.32 104.888 27.023C105.224 26.726 105.494 26.3627 105.682 25.956C105.87 25.5492 105.971 25.1079 105.98 24.66L106.26 22.29C106.493 20.1833 105.553 19.13 103.44 19.13ZM51.18 45.48H24.18L32.4 16.81H59.4L51.18 45.48Z" fill="#ED1C24" className="fill-neutral-700 dark:fill-neutral-200"/>
@@ -73,7 +74,7 @@ export default function Sidemenu() {
 
             </div>
               {links.map((link, idx) => (
-                <SidebarLink key={idx} link={link} />
+                <SidebarLink key={idx} link={link} setOpen={setOpen} />
               ))}
             </div>
             <div className={`transition-all duration-1000 flex-row items-center gap-3 md:flex hidden ${open ? "" : "flex-col-reverse"}`}>
