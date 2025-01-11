@@ -11,7 +11,7 @@ export default function page () {
         </h1>
 
         <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
-        Explore my graphic design and multimedia projects where imagination takes shape. From graphic design and motion graphics to video editing, I create visually captivating content that communicates your brand message effectively. Whether it's animated videos or static graphics, I blend creativity with technical expertise to produce designs that leave a lasting impression.
+        Explore my graphic design and multimedia projects where imagination takes shape. From graphic design and motion graphics to video editing, I create visually captivating content that communicates your brand message effectively. Whether it&apos;s animated videos or static graphics, I blend creativity with technical expertise to produce designs that leave a lasting impression.
         </p>
       </div>
         <GraphicsSection />
