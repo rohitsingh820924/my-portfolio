@@ -36,14 +36,14 @@ export default function Navbar({ className }: { className?: string }) {
           <MenuItem setActive={setActive} active={active} item="Products" className="md:ml-[70px]">
             <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 md:p-4 mx-auto">
               <ProductItem
-                title="Frontend"
-                href="/products/frontend"
+                title="Development"
+                href="/products/development"
                 src="/images/services/frontend.jpg"
                 description="Building responsive, dynamic, and interactive web interfaces."
               />
               <ProductItem
-                title="Web"
-                href="/products/web"
+                title="Design"
+                href="/products/design"
                 src="/images/services/web-design.jpg"
                 description="Crafting functional websites using modern web technologies."
               />

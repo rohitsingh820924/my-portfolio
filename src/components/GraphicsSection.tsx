@@ -7,7 +7,7 @@ import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 export default function GraphicsSection() {
   return (
     <>
-      <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mx-auto">
+      <div className="py-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mx-auto">
         <Card title="Specialized in creating stunning visual designs and photo editing with Adobe Photoshop." icon={<PhotoshopIcon />}>
           <CanvasRevealEffect
              animationSpeed={3}

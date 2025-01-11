@@ -20,8 +20,6 @@ export const StickyScroll = ({
   const [activeCard, setActiveCard] = React.useState(0);
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
-    // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
-    // target: ref
     container: ref,
     offset: ["start start", "end start"],
   });
@@ -63,9 +61,6 @@ export const StickyScroll = ({
 
   return (
     <motion.div
-      // animate={{
-      //   backgroundColor: backgroundColors[activeCard % backgroundColors.length],
-      // }}
       className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 p-10 no-scrollbar dark:bg-black bg-white"
       ref={ref}
     >
@@ -99,9 +94,19 @@ export const StickyScroll = ({
                 {item.description}
               </motion.p>
               <span className="text-xs mt-8 block">
-                <LinkPreview url={item.url}>
+              <motion.p
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: activeCard === index ? 1 : 0.3,
+                }}
+                className="text-xs dark:text-neutral-300 text-neutral-950 max-w-sm mt-10"
+              >
+                 <LinkPreview url={item.url}>
                     Visit Website
                 </LinkPreview>
+              </motion.p>
                 </span>
             </div>
           ))}

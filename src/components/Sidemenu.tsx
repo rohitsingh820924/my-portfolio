@@ -2,10 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
-import { FaReact, FaNodeJs, FaDesktop } from 'react-icons/fa';
-import { SiVercel } from 'react-icons/si';
+import { MdOutlineWebAsset } from "react-icons/md";
+import { IoCodeSlashOutline } from "react-icons/io5";
+import { FaFigma } from "react-icons/fa";
+import { HiOutlinePaintBrush } from "react-icons/hi2";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { setOpenMenu } from "@/lib/store/slices/sidemenuSlice";
 import { BiHomeAlt2 } from "react-icons/bi";
@@ -13,31 +14,31 @@ import { BiHomeAlt2 } from "react-icons/bi";
 export default function Sidemenu() {
   const links = [
     {
-      label: "ReactJs",
-      href: "/products/frontend",
+      label: "Development",
+      href: "/products/development",
       icon: (
-        <FaReact className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IoCodeSlashOutline className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "NextJs",
-      href: "#",
+      label: "Design",
+      href: "/products/design",
       icon: (
-        <SiVercel className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <MdOutlineWebAsset className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "NodeJs",
-      href: "#",
-      icon: (
-        <FaNodeJs className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
-    {
-      label: "Web Design",
+      label: "UI/UX",
       href: "/products/ui-ux",
       icon: (
-        <FaDesktop className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <FaFigma className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Graphics",
+      href: "/products/graphics",
+      icon: (
+        <HiOutlinePaintBrush className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
   ];
@@ -56,6 +57,7 @@ export default function Sidemenu() {
           <div className="fixed mt-8 z-10 h-[calc(100svh-32px)] pb-10 flex flex-col flex-1 justify-between overflow-y-auto overflow-x-hidden">
             <div className="z-9 flex flex-col gap-2">
             <div>
+            <Link href={"/"}>
             <svg width="100" height="30" className={`h-auto transition-all ${open ? 'md:w-[100px]' : 'md:w-[25px]'}`} viewBox="0 0 184 63" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_322_2)">
               <path d="M103.44 19.13H84.44C84.0034 19.0971 83.5647 19.1542 83.151 19.2977C82.7373 19.4412 82.3575 19.6681 82.035 19.9643C81.7126 20.2605 81.4544 20.6198 81.2763 21.0198C81.0983 21.4198 81.0042 21.8521 81 22.29H77.12L80.41 10.83C80.41 10.64 80.51 10.46 80.55 10.28C80.918 8.97841 80.9796 7.60932 80.73 6.27997C80.4758 5.01543 79.8771 3.84573 79 2.89997C78.0563 1.92005 76.8899 1.18248 75.6 0.74997C74.1209 0.238494 72.565 -0.0151926 71 -2.97638e-05H9.9L14.38 12.05L0 62.29H53.14C54.8341 62.2821 56.5181 62.0294 58.14 61.54C59.7801 61.0618 61.338 60.3368 62.76 59.39C63.3357 59.0098 63.8807 58.5852 64.39 58.12C65.7619 56.931 66.8953 55.4921 67.73 53.88C68.139 53.1067 68.4738 52.2964 68.73 51.46L74.92 29.94C77.4866 28.4299 80.4348 27.6937 83.41 27.82H102.41C102.856 27.8657 103.306 27.8185 103.733 27.6813C104.159 27.5441 104.553 27.32 104.888 27.023C105.224 26.726 105.494 26.3627 105.682 25.956C105.87 25.5492 105.971 25.1079 105.98 24.66L106.26 22.29C106.493 20.1833 105.553 19.13 103.44 19.13ZM51.18 45.48H24.18L32.4 16.81H59.4L51.18 45.48Z" fill="#ED1C24" className="fill-neutral-700 dark:fill-neutral-200"/>
@@ -67,6 +69,7 @@ export default function Sidemenu() {
               </clipPath>
               </defs>
               </svg>
+            </Link>
 
             </div>
               {links.map((link, idx) => (
@@ -83,31 +86,4 @@ export default function Sidemenu() {
     </div>
   );
 }
-export const Logo = () => {
-  return (
-    <Link
-      href="#"
-      className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
-    >
-      <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" />
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="font-medium text-black dark:text-white whitespace-pre"
-      >
-        Acet Labs
-      </motion.span>
-    </Link>
-  );
-};
-export const LogoIcon = () => {
-  return (
-    <Link
-      href="#"
-      className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
-    >
-      <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" />
-    </Link>
-  );
-};
 

@@ -23,7 +23,7 @@ export function ContactMap() {
           </span>
         </p>
         <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
-        Have questions or a project idea? Reach out! Use the contact form or explore the world map to see where I've made an impact. Let's collaborate to create something amazing.
+        Have questions or a project idea? Reach out! Use the contact form or explore the world map to see where I&apos;ve made an impact. Let&apos;s collaborate to create something amazing.
         </p>
       </div>
       <WorldMap

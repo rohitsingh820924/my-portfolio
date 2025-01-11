@@ -1,21 +1,9 @@
-import BlogItem from '@/components/BlogItem'
 import CompareBox from '@/components/CopmareBox'
 import ProjectTabs from '@/components/ProjectTabs';
-import { apiGet } from '@/lib/api';
-import { Blog } from '@/lib/types/blogType';
-import Image from 'next/image';
+import RelatedBlogs from '@/components/RelatedBlogs';
 import React from 'react'
 
-const baseUrl = process.env.NEXT_BASE_URL;
-async function fetchBlogPost(): Promise<Blog[]> {
-  const data = await apiGet(`${baseUrl}/api/blog`);
-  return data.blogs;
-}
-
-
-
-export default async function page () {
-  const blogs = await fetchBlogPost();
+export default function page () {
 
   const tabs = [
     {
@@ -62,23 +50,23 @@ export default async function page () {
   ];
 
   return (
-    <div className='max-w-4xl mx-auto pb-5 px-4 mt-14 md:mt-8'>
-      <h1 className='md:text-3xl text-2xl text-neutral-950 dark:text-neutral-50 font-bold mb-5'>UI/UX Design | Crafting Seamless Digital Experiences</h1>
-        <CompareBox />
+    <div className='max-w-4xl mx-auto pb-5 px-4 mt-20'>
+      <div className="md:px-8">
+        <h1 className="text-xl md:text-2xl lg:text-4xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
+          UI/UX Design | Crafting Seamless Digital Experiences
+        </h1>
 
-        <p className='my-10 text-neutral-950 dark:text-neutral-50 text-lg'>Explore my UI/UX design projects where creativity meets functionality. I craft intuitive, user-centric interfaces that enhance user experiences and drive engagement. See how I transform ideas into visually compelling and responsive designs.</p>
-        <div className=''>
-          <h2 className='text-lg md:text-2xl font-semibold mb-3 text-neutral-950 dark:text-neutral-50'>My UI/UX Projects</h2>
+        <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
+        Explore my UI/UX design projects where creativity meets functionality. I craft intuitive, user-centric interfaces that enhance user experiences and drive engagement. See how I transform ideas into visually compelling and responsive designs.
+        </p>
+      </div>
+        <CompareBox />
+      <div className=''>
+          <h2 className='text-lg md:text-2xl font-semibold mb-3 text-neutral-950 dark:text-neutral-50 mt-5'>My UI/UX Projects</h2>
           <p className='text-neutral-950 dark:text-neutral-50 text-sm'>A showcase of sleek, user-friendly designs crafted for seamless digital experiences.</p>
           <ProjectTabs tabs={tabs} />
         </div>
-        <h2 className='text-lg md:text-2xl font-semibold mb-3 text-neutral-950 dark:text-neutral-50'>All Blogs</h2>
-        <p className='text-neutral-950 dark:text-neutral-50 text-sm'>Browse through all my blogs covering UI/UX design, web development, and creative projects. Gain insights, tips, and inspiration from my experiences and industry trends.</p>
-        <div className="grid md:grid-cols-1 gap-10 md:flex-wrap flex-nowrap my-10">
-          {
-            blogs?.map((item:Blog)=><BlogItem key={item.id} blogContent={item} />)
-          }
-        </div>
+        <RelatedBlogs />
     </div>
   )
 }

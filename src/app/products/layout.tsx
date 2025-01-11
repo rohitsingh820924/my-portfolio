@@ -1,7 +1,7 @@
-"use client";
+'use client'
 import Sidemenu from "@/components/Sidemenu"
 import { cn } from "@/lib/utils"
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 export default function DashboardLayout({
     children,
