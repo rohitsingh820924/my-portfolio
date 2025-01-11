@@ -80,7 +80,6 @@ const products = [
     link: "https://habot-ten.vercel.app/",
     thumbnail: "/images/projects/habot.png",
   },
-  
   {
     title: "mAIstory",
     link: "https://www.figma.com/file/8C4PbNyE11bhgPeX53BnX0?type=design&node-id=0%3A1&mode=design",

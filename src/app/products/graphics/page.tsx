@@ -18,7 +18,9 @@ export default async function page () {
       <h1 className='md:text-3xl text-2xl text-neutral-950 dark:text-neutral-50 font-bold mb-5'>Creative Design & Video Editing Services</h1>
         <GraphicsSection />
         <p className='my-10 text-neutral-950 dark:text-neutral-50 text-sm'>Explore my portfolio showcasing professional design and video editing projects crafted with Adobe Photoshop, Illustrator, Premiere Pro, XD, Media Encoder, and After Effects. Hire me to bring your creative vision to life with stunning visuals and impactful videos.</p>
-        <div className="grid md:grid-cols-1 gap-10 md:flex-wrap flex-nowrap">
+        <h2 className='text-lg md:text-2xl font-semibold mb-3 text-neutral-950 dark:text-neutral-50'>All Blogs</h2>
+        <p className='text-neutral-950 dark:text-neutral-50 text-sm'>Browse through all my blogs covering UI/UX design, web development, and creative projects. Gain insights, tips, and inspiration from my experiences and industry trends.</p>
+        <div className="grid md:grid-cols-1 gap-10 md:flex-wrap flex-nowrap my-10">
           {
             blogs?.map((item:Blog)=><BlogItem key={item.id} blogContent={item} />)
           }
