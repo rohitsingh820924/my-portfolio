@@ -127,6 +127,12 @@ const testimonialsCode = [
       "Proficient in Bootstrap, I utilize its responsive grid system and pre-built components to quickly design and develop mobile-first, visually appealing websites.",
     image: "/images/skills/bootstrap.png",
     title: "Bootstrap",
+  },
+  {
+    quote:
+      "Proficient in Ant Design, I leverage its robust component library and design principles to build sleek, responsive, and user-friendly applications with ease and efficiency.",
+    image: "/images/skills/antd.png",
+    title: "Ant Design",
   }
 ];
 

@@ -8,7 +8,7 @@ export default function TimelineSection() {
       title: "2021",
       content: (
         <div>
-          <h3 className="dark:text-white text-black font-bold mb-5"><a href="https://hawkscode.com/">HawksCode Softwares Pvt. Ltd.</a></h3>
+          <h3 className="dark:text-white text-black text-3xl font-bold mb-5"><a href="https://hawkscode.com/">HawksCode Softwares Pvt. Ltd.</a></h3>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
           I specialize in creating visually appealing and user-friendly web designs, with a strong focus on Figma for crafting detailed and innovative design layouts.
           </p>

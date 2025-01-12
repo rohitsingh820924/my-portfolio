@@ -16,14 +16,14 @@ export default function FrontendSection() {
         "As a frontend developer with a strong design foundation, I bridge creativity and technical expertise to craft visually stunning and highly functional web applications.",
       skeleton: <SkeletonOne />,
       className:
-        "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
+        "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-700",
     },
     {
       title: "My Work and Projects",
       description:
         "My portfolio showcases diverse projects, from real estate platforms to live sports updates, combining creativity and functionality to exceed client expectations.",
       skeleton: <SkeletonTwo />,
-      className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
+      className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-700",
     },
     {
       title: "My Skills and Tech Stack",
@@ -31,20 +31,20 @@ export default function FrontendSection() {
         "Skilled in HTML, CSS, JavaScript, React.js, TypeScript, and Node.js, with expertise in responsive design using Tailwind CSS, Bootstrap, and Material-UI.",
       skeleton: <SkeletonThree />,
       className:
-        "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
+        "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-700",
     },
     {
       title: "Let's Collaborate",
       description:
         "Looking for a dedicated frontend developer to bring your vision to life? Let's work together to craft intuitive, modern web applications that leave a lasting impact.",
       skeleton: <SkeletonFour />,
-      className: "col-span-1 lg:col-span-3 border-b lg:border-none",
+      className: "col-span-1 lg:col-span-3 border-b lg:border-none overflow-hidden",
     },
   ];
   return (
     <div className="relative z-20 py-2 mb-5 max-w-7xl mx-auto">
       <div className="relative ">
-        <div className="grid grid-cols-1 lg:grid-cols-6 border rounded-md dark:border-neutral-800">
+        <div className="grid grid-cols-1 lg:grid-cols-6 border rounded-md dark:border-neutral-700">
           {features.map((feature) => (
             <FeatureCard key={feature.title} className={feature.className}>
               <FeatureTitle>{feature.title}</FeatureTitle>
@@ -66,7 +66,7 @@ const FeatureCard = ({
   className?: string;
 }) => {
   return (
-    <div className={cn(`p-4 sm:p-8 relative overflow-hidden`, className)}>
+    <div className={cn(`p-4 sm:p-8 relative`, className)}>
       {children}
     </div>
   );
@@ -132,45 +132,9 @@ export const SkeletonThree = () => {
         },
         {
           id: 3,
-          name: "Figma",
-          designation: "UI/UX Design",
-          image: "/images/skills/figma.png",
-        },
-        {
-          id: 4,
-          name: "Adobe After Effects",
-          designation: "Motion Graphics & Video Editing",
-          image: "/images/skills/after-effects.png",
-        },
-        {
-          id: 5,
-          name: "Photoshop",
-          designation: "Graphic Design",
-          image: "/images/skills/photoshop.png",
-        },
-        {
-          id: 6,
-          name: "Adobe Illustrator",
-          designation: "Vector Graphic Design",
-          image: "/images/skills/illustrator.png",
-        },
-        {
-          id: 7,
-          name: "Adobe Premiere Pro",
-          designation: "Video Editing",
-          image: "/images/skills/premiere-pro.png",
-        },
-        {
-          id: 8,
-          name: "Adobe XD",
-          designation: "UI/UX Prototyping",
-          image: "/images/skills/xd.png",
-        },
-        {
-          id: 9,
-          name: "Adobe Media Encoder",
-          designation: "Video Rendering & Compression",
-          image: "/images/skills/media-encoder.png",
+          name: "Ant Design",
+          designation: "Frontend Development",
+          image: "/images/skills/antd.png",
         },
         {
           id: 10,

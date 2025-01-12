@@ -4,14 +4,15 @@ import { Meteors } from "@/components/ui/meteors";
 export default function CollageSection() {
   return (
     <div className="dark:bg-black bg-white">
+      <h2 className="text-4xl md:text-5xl font-bold text-center dark:text-neutral-300 text-neutral-950 pt-10 mb-10">My Accomplishments</h2>
       <div className="max-w-7xl p-10 mx-auto gap-10 grid md:grid-cols-2">
         <div className="w-full relative">
           <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
           <div className="relative shadow-xl border border-transparent dark:bg-black dark:border-white/[0.2] bg-white  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
 
-            <h1 className="font-bold text-xl dark:text-white text-black mb-4 relative z-10">
+            <h3 className="font-bold text-xl dark:text-white text-black mb-4 relative z-10">
             Bachelor of Computer Applications (BCA)
-            </h1>
+            </h3>
 
             <p className="font-normal text-base text-slate-500 mb-4 relative z-10">
             Maharishi Arvind Institute of Science & Management
@@ -37,9 +38,9 @@ export default function CollageSection() {
           <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
           <div className="relative shadow-xl border border-transparent dark:bg-black dark:border-white/[0.2] bg-white  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
 
-            <h1 className="font-bold text-xl dark:text-white text-black mb-4 relative z-10">
+            <h3 className="font-bold text-xl dark:text-white text-black mb-4 relative z-10">
             Master of Computer Applications (MCA)
-            </h1>
+            </h3>
 
             <p className="font-normal text-base text-slate-500 mb-4 relative z-10">
             Regional College For Education Research and Technology
