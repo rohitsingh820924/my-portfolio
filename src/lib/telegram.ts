@@ -12,12 +12,12 @@ export async function sendTelegramNotification(visitorData: any, data:any) {
   - Page: ${visitorData.page}
   - Device: ${visitorData.device}
   - Referrer: ${visitorData.referrer || 'Direct'}
-  ${data.country_name && (
-  `- Country :${data.country_name}
-  - Region :${data.region_name}
+  ${data.city && (
+  `- Country :${data.country}
+  - Region :${data.region}
   - City : ${data.city}
-  - Zip : ${data.zip}
-  - Location : https://maps.google.com/?q=${data.latitude},${data.longitude}
+  - Zip : ${data.postal}
+  - Location : https://maps.google.com/?q=${data.loc}
   `
   )}
   `;

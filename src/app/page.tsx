@@ -2,18 +2,17 @@
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectSection } from "@/components/ProjectsSection";
 import { SkillsSection } from "@/components/SkillsSections";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import TimelineSection from '@/components/TimelineSection'
 import FormSection from "@/components/FormSection";
 import CollageSection from "@/components/CollageSection";
-import { apiGet } from "@/lib/api";
 import Header from "@/components/Header";
 
 export default function Home() {
   useEffect(() => {
     const trackVisitor = async () => {
       const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-      const ipkey = await process.env.NEXT_IPSTACK_KEY;
+      const ipkey = process.env.NEXT_IPINFO_KEY;
       const visitorData = {
         ip: await fetch('https://api.ipify.org?format=json')
           .then(res => res.json())
@@ -26,8 +25,27 @@ export default function Home() {
         device: isMobile ? 'Mobile' : 'Desktop',
       };
       
-      if(visitorData.page !== "http://localhost:3000/") {
-        const data = await apiGet(`https://api.ipstack.com/${visitorData.ip}?access_key=${ipkey}`);
+      if(visitorData.page !== 'http://localhost:3000/') {
+        // const data = await apiGet(`https://api.ipstack.com/${visitorData.ip}?access_key=${ipkey}`);
+       const data = await fetch(`https://ipinfo.io/${visitorData.ip}`, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${ipkey}`,
+            'Content-Type': 'application/json', 
+          },
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log('IP Information:', data);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
 
         await fetch('/api/tracks', {
           method: 'POST',
