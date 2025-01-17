@@ -1,197 +1,100 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 
 const content = [
   {
     title: "SportsWiz",
     description:
-      "Your go-to for live scores, stats, and sports news. Stay updated with real-time game updates and in-depth player info. Get the edge in every match with SportsWiz!",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src="/images/projects/sportswiz.png"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover object-top"
-          alt="sportswiz"
-        />
-      </div>
-    ),
+      "A dynamic sports platform offering live scores, real-time updates, and detailed player stats, powered by Next.js, Tailwind CSS, and Node.js.",
+    imgUrl: "/images/projects/sportswiz.png",
     url: "https://sportswiz.live",
+    tech: ["Next.js", "Tailwind CSS", "Node.js"],
   },
   {
     title: "Vantage Commercial Realty",
     description:
-      "Vantage Commercial Realty specializes in commercial real estate, offering services like property management and leasing to help clients manage and optimize their commercial properties.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-      <Image
-        src="/images/projects/vantage.png"
-        width={300}
-        height={300}
-        className="h-full w-full object-cover object-top"
-        alt="sportswiz"
-      />
-    </div>
-    ),
+      "A professional platform for commercial real estate services like property management and leasing, developed using React.js, Tailwind CSS, and Node.js.",
+    imgUrl: "/images/projects/vantage.png",
     url: "https://vantagecr.com/",
+    tech: ["React.js", "Tailwind CSS", "Node.js"],
   },
   {
     title: "Quadra",
     description:
-      "Empowering your freelance journey. Connect with top talent, manage projects effortlessly, and elevate your business with ease. Discover the freedom of flexible work and exceptional results with Quadra Freelancers.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src="/images/projects/quadra.png"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover object-top"
-          alt="sportswiz"
-        />
-      </div>
-    ),
+      "A seamless freelance management platform to connect talent with businesses, designed with React.js and Python for exceptional flexibility and efficiency.",
+    imgUrl: "/images/projects/quadra.png",
     url: "https://www.quadrafreelancers.com/",
+    tech: ["React.js", "Python"],
   },
   {
     title: "AffordableDreamz",
     description:
-      "AffordableDreamz specializes in affordable housing, helping clients find budget-friendly properties and assisting first-time homebuyers.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src="/images/projects/affordabledreamz.png"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover object-top"
-          alt="sportswiz"
-        />
-      </div>
-    ),
+      "An intuitive platform for affordable housing solutions, assisting users in finding budget-friendly properties, built with Bootstrap, PHP, and MySQL.",
+    imgUrl: "/images/projects/affordabledreamz.png",
     url: "https://affordabledreamz.com/",
+    tech: ["Bootstrap", "PHP", "MySQL"],
   },
   {
     title: "Socket Prosthetics",
     description:
-      "Socket Prosthetics designs and manufactures custom prosthetic sockets, focusing on comfort and functionality for amputees. They prioritize innovative solutions to improve mobility and enhance the quality of life for their users.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src="/images/projects/socketprosthetics.png"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover object-top"
-          alt="sportswiz"
-        />
-      </div>
-    ),
+      "Innovative custom prosthetic solutions focused on improving mobility and comfort, powered by WordPress and PHP.",
+    imgUrl: "/images/projects/socketprosthetics.png",
     url: "https://socketprosthetics.com/",
+    tech: ["WordPress", "PHP"],
   },
   {
     title: "Pulse - Social Media Website",
     description:
-      "Your go-to for real connections and exciting encounters. Find your match or make a new connection with ease on Pulse.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src="/images/projects/pulse.png"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover object-top"
-          alt="sportswiz"
-        />
-      </div>
-    ),
+      "A vibrant social media platform enabling real connections and engaging interactions, crafted with PHP, Bootstrap, and JavaScript.",
+    imgUrl: "/images/projects/pulse.png",
     url: "https://demourls.xyz/Pulse-development/home-story.html",
+    tech: ["PHP", "Bootstrap", "JavaScript"],
   },
   {
     title: "DigiHomes - Real Estate",
     description:
-      "Your digital gateway to real estate. Explore, buy, and sell homes effortlessly with DigiHomes.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src="/images/projects/digi-homes.png"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover object-top"
-          alt="sportswiz"
-        />
-      </div>
-    ),
+      "A streamlined real estate platform to explore, buy, and sell properties effortlessly, developed using PHP, Bootstrap, and MySQL.",
+    imgUrl: "/images/projects/digi-homes.png",
     url: "https://digihomes.io/",
+    tech: ["PHP", "Bootstrap", "MySQL"],
   },
   {
     title: "Flikka - Job Search",
     description:
-      "Find your next job with ease. Discover opportunities and connect with employers on Flikka.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src="/images/projects/flikka.png"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover object-top"
-          alt="sportswiz"
-        />
-      </div>
-    ),
+      "A user-friendly job portal connecting seekers with employers, designed with PHP, Bootstrap, and MySQL for smooth functionality.",
+    imgUrl: "/images/projects/flikka.png",
     url: "https://flikka.com/",
+    tech: ["PHP", "Bootstrap", "MySQL"],
   },
   {
     title: "AR Academy",
     description:
-      "AR Academy offers coaching and resources for the RAS exam, providing study materials, mock tests, and expert guidance to help aspirants succeed.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src="/images/projects/aracademy.png"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover object-top"
-          alt="sportswiz"
-        />
-      </div>
-    ),
+      "An educational website offering comprehensive RAS exam preparation, including study materials and mock tests, built on WordPress and PHP.",
+    imgUrl: "/images/projects/aracademy.png",
     url: "https://www.aracademyras.com/",
+    tech: ["WordPress", "PHP", "MySQL"],
   },
   {
     title: "BubuPod",
     description:
-      "Experience effortless, time-saving bottle care with Bubupod - designed to wash, sterilize, dry and store your baby bottles, pump parts, pacifiers, and teethers, giving your little one the safest, cleanest, feeding essentials.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src="/images/projects/bubupod.png"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover object-top"
-          alt="bubupod"
-        />
-      </div>
-    ),
+      "An e-commerce solution for baby care essentials, offering sterilizers and storage solutions, built with WordPress and WooCommerce.",
+    imgUrl: "/images/projects/bubupod.png",
     url: "https://bubupod.com/",
+    tech: ["WordPress", "Bootstrap", "WooCommerce"],
   },
   {
     title: "Habot",
     description:
-      "Habot connects job seekers with top opportunities across the UAE. Discover full-time, part-time, and freelance roles with ease, all in one place.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src="/images/projects/habot.png"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover object-top"
-          alt="habot"
-        />
-      </div>
-    ),
+      "A versatile job platform connecting talent with opportunities across the UAE, developed with React.js, Tailwind CSS, and Node.js.",
+    imgUrl: "/images/projects/habot.png",
     url: "https://habot-ten.vercel.app/",
+    tech: ["React.js", "Tailwind CSS", "Node.js"],
   },
 ];
+
+
+
 export function ProjectSection() {
   const [isPinned, setIsPinned] = useState(false);
   const sectionRef = useRef(null);

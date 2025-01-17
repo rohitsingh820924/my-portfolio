@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { LinkPreview } from "@/components/ui/link-preview";
 
 export const StickyScroll = ({
@@ -13,7 +14,8 @@ export const StickyScroll = ({
     title: string;
     description: string;
     url: string;
-    content?: React.ReactNode | any;
+    tech:string[]
+    imgUrl?: string | any;
   }[];
   contentClassName?: string;
 }) => {
@@ -40,28 +42,9 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = [
-    "var(--slate-900)",
-    "var(--black)",
-    "var(--neutral-900)",
-  ];
-  const linearGradients = [
-    "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
-    "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
-    "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
-  ];
-
-  const [backgroundGradient, setBackgroundGradient] = useState(
-    linearGradients[0]
-  );
-
-  useEffect(() => {
-    setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard]);
-
   return (
     <motion.div
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 p-10 no-scrollbar dark:bg-black bg-white"
+      className="h-[20rem] overflow-y-auto flex justify-center relative space-x-10 p-10 no-scrollbar dark:bg-black bg-white"
       ref={ref}
     >
       <div className="div relative flex items-start px-4">
@@ -79,8 +62,27 @@ export const StickyScroll = ({
               >
                 {item.title}
               </motion.h2>
-              <motion.div className="block lg:hidden mt-8 rounded-lg overflow-hidden aspect-video object-cover object-top">
-                {item.content}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: activeCard === index ? 1 : 0.3,
+                }}
+                className="flex flex-wrap gap-2 my-5 dark:text-neutral-100 text-neutral-950"
+              >
+                {
+                  item.tech.map((techItem,index) => <span key={index} className="bg-gray-200 dark:bg-neutral-900 text-[10px] rounded-full py-1.5 px-3 dark:text-white text-black">{techItem}</span>)
+                }
+              </motion.div>
+              <motion.div className="block lg:hidden rounded-lg overflow-hidden aspect-video object-cover object-top mb-5">
+              <Image
+                  src={item.imgUrl ?? null}
+                  width={300}
+                  height={300}
+                  className="h-full w-full object-cover object-top"
+                  alt={item.imgUrl}
+                />
               </motion.div>
               <motion.p
                 initial={{
@@ -89,11 +91,11 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-lg dark:text-neutral-300 text-neutral-950 max-w-sm mt-10"
+                className="text-sm dark:text-neutral-300 text-neutral-950 max-w-sm"
               >
                 {item.description}
               </motion.p>
-              <span className="text-xs mt-8 block">
+              <span className="text-xs mt-5 block">
               <motion.p
                 initial={{
                   opacity: 0,
@@ -101,7 +103,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-xs dark:text-neutral-300 text-neutral-950 max-w-sm mt-10"
+                className=""
               >
                  <LinkPreview url={item.url}>
                     Visit Website
@@ -110,17 +112,23 @@ export const StickyScroll = ({
                 </span>
             </div>
           ))}
-          <div className="h-40" />
         </div>
       </div>
       <div
-        style={{ background: backgroundGradient }}
         className={cn(
           "hidden lg:block h-60 w-96 rounded-md bg-white sticky top-10 overflow-hidden",
           contentClassName
         )}
       >
-        {content[activeCard].content ?? null}
+         <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        <Image
+          src={content[activeCard].imgUrl ?? null}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover object-top"
+          alt="sportswiz"
+        />
+      </div>
       </div>
     </motion.div>
   );

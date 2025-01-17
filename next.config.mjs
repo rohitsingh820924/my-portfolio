@@ -1,16 +1,35 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-    images: {
-        domains: ['assets.aceternity.com', 'images.unsplash.com', 'api.microlink.io',"aceternity.com"],
-        remotePatterns: [
-          {
-            protocol: 'https',
-            hostname: 'res.cloudinary.com',
-            pathname: '**',
-          },
-        ],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'assets.aceternity.com',
+        pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'api.microlink.io',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'aceternity.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '**',
+      },
+    ],
+  },
       env: {
         NEXT_URL_SMTP_HOST: process.env.NEXT_URL_SMTP_HOST,
         NEXT_URL_SMTP_PORT: process.env.NEXT_URL_SMTP_PORT,

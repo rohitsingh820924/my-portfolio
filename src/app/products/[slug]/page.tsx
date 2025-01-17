@@ -15,7 +15,6 @@ async function fetchBlogPostMetadata(slug: string): Promise<Blog | null> {
     
   } catch (error:any) {
     redirect('/products')
-    return null;
   }
 }
 

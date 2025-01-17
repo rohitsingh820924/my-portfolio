@@ -4,7 +4,7 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 export default function Loading() {
     // You can add any UI inside Loading, including a Skeleton.
     return (    <TracingBeam className="px-6">
-      <div className="mb-10 pt-4">
+      <div className="mb-10 pt-4 mx-auto max-w-4xl">
         <div>
           <div className="h-10 bg-gray-200 rounded dark:bg-gray-700 w-full mb-3"></div>
           <div className="h-10 bg-gray-200 rounded dark:bg-gray-700 w-2/3"></div>
