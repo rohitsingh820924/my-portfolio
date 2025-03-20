@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
 import jwt from 'jsonwebtoken';
-import Portfolio from '@/modal/user';
+import Portfolio from '@/modal/portfolio';
 
 export async function POST(req: NextRequest) {
   await dbConnect();

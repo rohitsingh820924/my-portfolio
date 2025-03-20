@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
 import jwt from "jsonwebtoken"
-import Portfolio from '@/modal/user';
+import Portfolio from '@/modal/portfolio';
 
 
 export async function GET(req: NextRequest, res: NextResponse) {
