@@ -48,6 +48,7 @@ const nextConfig = {
         NEXT_IPSTACK_KEY: process.env.NEXT_IPSTACK_KEY,
         NEXT_IPINFO_KEY: process.env.NEXT_IPINFO_KEY,
         NEXT_GOOGLE_CLIENT_ID: process.env.NEXT_GOOGLE_CLIENT_ID,
+        NEXT_PUBLIC_GOOGLE_CLIENT_ID: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
         NEXT_GOOGLE_CLIENT_SECRET: process.env.NEXT_GOOGLE_CLIENT_SECRET,
       }
 };
