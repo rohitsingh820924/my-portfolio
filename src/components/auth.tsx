@@ -26,6 +26,7 @@ const GoogleLoginButton = () => {
         { theme: "outline", size: "large", text: "continue_with" }
       );
     };
+    
   }, []);
 
   const handleCredentialResponse = async (response: any) => {
