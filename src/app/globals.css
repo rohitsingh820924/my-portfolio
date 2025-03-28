@@ -93,3 +93,84 @@ pre {
 #nprogress .spinner {
   display: none; /* Hide the spinner if not needed */
 }
+
+/*  */
+/* Container to center the calendar */
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full-screen height */
+}
+
+/* Make the calendar bigger */
+body .custom-calendar {
+  width: 600px;
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  border: none;
+}
+
+/* Increase date size */
+.custom-calendar .react-calendar__tile {
+  font-size: 22px; /* Bigger font */
+  padding: 20px; /* Bigger clickable area */
+}
+
+.custom-calendar  .react-calendar__month-view__weekdays__weekday {
+  font-size: 20px;
+  border: none;
+}
+
+.custom-calendar  .react-calendar__month-view__weekdays__weekday abbr:where([title]) {
+  text-decoration: none;
+}
+
+body .custom-calendar  .react-calendar__navigation button {
+  font-size: 42px;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+body .custom-calendar button.react-calendar__navigation__arrow {
+  border: 1px solid #0d9488 !important;
+  display: flex;
+  color: #0d9488;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+  border-radius: 40px;
+  background-color: transparent !important;
+}
+
+/* Tiffin Date */
+.tiffin-1-paid {
+  background-color: #67e8f9; /* Cyan-300 */
+  color: #374151; /* Gray-700 */
+}
+
+.tiffin-1-unpaid {
+  background-color: #06b6d4; /* Cyan-500 */
+  color: #ffffff;
+}
+
+.tiffin-2-paid {
+  background-color: #d8b4fe; /* Purple-300 */
+  color: #374151;
+}
+
+.tiffin-2-unpaid {
+  background-color: #a855f7; /* Purple-500 */
+  color: #ffffff;
+}
+
+.tiffin-3-5-paid {
+  background-color: #fda4af; /* Rose-300 */
+  color: #374151;
+}
+
+.tiffin-3-5-unpaid {
+  background-color: #f43f5e; /* Rose-500 */
+  color: #ffffff;
+}

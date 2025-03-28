@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
 
     const { name, email } = payload;
     if (!email) {
-      return NextResponse.json({ message: 'Email not found in Google response' }, { status: 400 });
+      return NextResponse.json({ message: 'Email not found in Google response' }, { status:400 });
     }
 
     // Check if user exists, otherwise create a new one
@@ -33,13 +33,20 @@ export async function POST(req: NextRequest) {
       await user.save();
     }
 
-    // Create JWT token
-    const tokenData = { name: user.name, email: user.email };
+    // Create JWT token with user ID
+    const tokenData = { id: user._id, name: user.name, email: user.email };
     const authToken = jwt.sign(tokenData, process.env.NEXT_TOKEN_SECRET!, { expiresIn: '1h' });
 
-    // Set HTTP-only authentication cookie
+    // Set HTTP-only authentication cookie with user ID
     const response = NextResponse.json({ message: 'Authenticated', success: true });
     response.cookies.set('token', authToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 3600, // 1 hour
+    });
+
+    response.cookies.set('user_id', user._id.toString(), {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
